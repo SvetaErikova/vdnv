@@ -1,0 +1,22 @@
+@font-face
+  font-family: 'Circle'
+  font-weight: 400
+  font-style: normal
+  src: url("../fonts/Circle-regular.woff") format('truetype')
+
+@font-face
+  font-family: 'Circle'
+  font-weight: 350
+  font-style: normal
+  src: url("../fonts/Circle-light.woff") format('truetype')
+
+html
+  font-size: clamp(16px, calc(16px + (18 - 16) * ((100vw - 1024px) / (1920 - 1024))), 18px)
+  font-family: 'Circle', sans-serif
+  text-size-adjust: none
+  -webkit-text-size-adjust: none
+
+
+.title_year
+  font-weight: 350
+  font-size: var(--fs-year)

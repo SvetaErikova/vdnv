@@ -1,0 +1,45 @@
+.project
+  background-color: #E4DFC9
+  margin-top: -100vh
+  &__title
+    position: relative
+    z-index: 2
+    height: 200vh
+    mix-blend-mode: difference
+    display: flex
+    justify-content: center
+    .title_year
+      color: #FFFFFF
+      position: sticky
+      top: 0
+      height: 100vh
+      line-height: 1
+      display: flex
+      align-items: center
+
+
+.project
+  &__title
+    .title_year
+      display: flex
+      font-variant-numeric: tabular-nums
+      .digit-container
+        display: inline-block
+        position: relative
+        overflow: hidden
+        height: 1em
+        .digit_stub
+          opacity: 0
+        .digit-stack
+          position: absolute
+          width: 100%
+          .digit
+            display: flex
+            align-items: center
+            justify-content: center
+
+
+
+
+
+
