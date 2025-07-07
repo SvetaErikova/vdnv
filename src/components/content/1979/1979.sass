@@ -1,0 +1,34 @@
+.opening
+  &__anim
+    position: relative
+    color: var(--text-white)
+    margin-bottom: var(--p-80)
+    display: flex
+    flex-direction: column
+    .title_year
+      position: sticky
+      top: 0
+      text-align: center
+
+    .cosmos
+      position: absolute
+      inset: 0
+      object-position: bottom center
+      z-index: 1
+      object-fit: contain
+
+    .human
+      position: absolute
+      object-fit: contain
+      object-position: bottom center
+      bottom: 0
+      width: 41.667vw
+      z-index: 2
+      right: 0
+  &__gallery
+    display: flex
+    gap: 1.667vw
+    .card
+      //aspect-ratio: 717/509
+      //width: 37.344vw
+

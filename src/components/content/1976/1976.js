@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const projectSection = document.querySelector('.project');
+  const projectSection = document.querySelector('.project__title');
   if (!projectSection) return;
 
   const digitStacks = document.querySelectorAll('.digit-stack');
