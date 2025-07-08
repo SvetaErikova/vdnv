@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     start: "50% bottom",
     end: "bottom bottom",
     scrub: true,
-    markers: true,
+    markers: false,
     onUpdate: (self) => {
       const progress = self.progress;
 

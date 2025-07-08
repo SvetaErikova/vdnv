@@ -1,0 +1,64 @@
+.cosmonautics
+  background-color: #03081B
+  color: var(--text-white)
+  .title_year
+
+.horizontal
+  padding-top: 20vh
+  overflow: hidden
+  //height: 100vh
+  width: 100%
+  svg
+    aspect-ratio: 880/920
+    max-width: 880px
+    cursor: pointer
+    width: 100%
+    height: auto
+    margin-bottom: 20vh
+  &__wrapper
+    width: 100%
+    height: 100vh
+    position: relative
+
+  &__slides
+    display: flex
+    position: relative
+    height: 100vh
+
+  .slide
+    width: 100vw
+    height: 100vh
+    flex-shrink: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    position: relative
+    img
+      object-position: center
+    .back
+      position: absolute
+      object-fit: inherit
+    .title_year
+      position: absolute
+      z-index: 2
+    .front
+      position: absolute
+      z-index: 4
+    .logo
+      position: absolute
+      bottom: 5vh
+      left: 50%
+      translate: -50% 0
+      z-index: 2
+      max-height: 20vh
+      object-fit: contain
+    &:nth-child(2)
+      z-index: 2
+      .front
+        position: static
+        left: 0
+    &:nth-child(3)
+      z-index: 1
+    &:nth-child(1)
+      z-index: 3
+      background-color: #03081B
