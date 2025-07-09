@@ -6,19 +6,38 @@
   .title_year
     text-align: center
     color: rgba(195, 35, 4, 1)
+  //&__build
+  //  position: relative
+  //  .image-mask,
+  //  .image-moskow
+  //    position: absolute
+  //    top: 0
+  //    left: 0
+  //    right: 0
+  //    object-fit: contain
+  //    height: auto
+  //  .image-mask
+  //    z-index: 2
+  //
+  //  .image-moskow
+  //    z-index: 1
+
   &__image_text
     display: flex
-    flex-direction: column
+    flex-direction: column-reverse
+    color: #9B1E06
     @media (min-width: 769px)
       display: grid
       grid-template-columns: 1fr 1fr
-      color: #9B1E06
+
     &__content
       display: flex
       flex-direction: column
       justify-content: center
       align-items: center
       gap: 2.917vw
+      @media (max-width: 768px)
+        padding: 11.65vw calc(var(--container) + 5.825vw)
       div
         display: flex
         flex-direction: column
@@ -26,12 +45,20 @@
         @media (min-width: 769px)
           max-width: 33.333vw
       h4
-        font-size: 2.5vw
+        font-size: 5.825vw
         line-height: 1.3
+        @media (min-width: 769px)
+          font-size: 2.5vw
       ul
-        font-size: 1.458vw
+        display: flex
+        flex-direction: column
+        gap: 1vw
+        font-size: 4.369vw
         line-height: 1.4
+        @media (min-width: 769px)
+          font-size: 1.458vw
     &__image
+      display: flex
   &__bottom
     position: relative
     height: 100vh
@@ -43,6 +70,7 @@
     &_text
       font-size: var(--fs-md)
       line-height: 1.3
+      text-align: center
       @media (min-width: 769px)
         max-width: 45.313vw
     &_image

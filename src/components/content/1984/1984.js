@@ -1,19 +1,3 @@
-gsap.to('.cosmonautics .horizontal .anim-rotate',  {
-
-  rotate: '15%',
-  translate: '7% 1%',
-  ease: 'none',
-  scrollTrigger: {
-    trigger: '.cosmonautics .horizontal',
-    start: 'top bottom',
-    end: '90% bottom ',
-    scrub: true,
-    markers: true
-  }
-});
-
-
-
 function initHorizontalScroll() {
   const slides = document.querySelectorAll(".slide");
   const slidesContainer = document.querySelector(".horizontal__slides");
@@ -65,6 +49,23 @@ function initHorizontalScroll() {
   });
 }
 
-// // Инициализация
-window.addEventListener("load", initHorizontalScroll);
-window.addEventListener("resize", initHorizontalScroll);
+
+let cosmonautics = document.querySelector('.cosmonautics');
+if (cosmonautics) {
+  window.addEventListener("resize", initHorizontalScroll);
+
+  gsap.to('.cosmonautics .horizontal .anim-rotate',  {
+
+    rotate: '15%',
+    translate: '7% 1%',
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '.cosmonautics .horizontal',
+      start: 'top bottom',
+      end: '90% bottom ',
+      scrub: true,
+      markers: false
+    }
+  });
+
+}

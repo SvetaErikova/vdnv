@@ -5,11 +5,13 @@
     inset: 0
     .title_year
       position: sticky
-      top: 0
-      height: 100vh
+      top: 30vh
       display: flex
       justify-content: center
       align-items: center
+      @media (min-width: 769px)
+        height: 100vh
+        top: 0
   &__anim
     position: relative
     color: var(--text-white)
@@ -32,25 +34,33 @@
       right: 0
     .text
       position: absolute
-      bottom: 70vh
+      bottom: 20vh
       left: 50%
       translate: -50% 0
       font-size: 2.5vw
       z-index: 3
       text-align: center
-      max-width: 45.833vw
+      text-shadow: 0 2px 52px rgba(0, 0, 0, 0.65)
+      @media (min-width: 769px)
+        bottom: 70vh
+        max-width: 45.833vw
   &__gallery
     overflow: hidden
     &_wrapper
-      display: flex
+      display: grid
+      grid-template-columns: repeat(3, 1fr)
+      width: 140%
       gap: 1.667vw
     .card
       flex-shrink: 0
   &__info
     .wrapper
       display: grid
-      grid-template-columns: repeat(4, 1fr)
-      padding: 0 var(--p-80)
+      padding: 0 var(--container)
+      grid-template-columns: repeat(2, 1fr)
+      @media (min-width: 769px)
+        grid-template-columns: repeat(4, 1fr)
+        grid-template-rows: auto 1fr
       .text
         position: absolute
       div
@@ -58,41 +68,68 @@
       img
         object-fit: contain
         height: auto
-      &>div:first-child
+      .title
+        text-align: center
+        font-size: var(--fs-md)
+        margin:  5vh 0
+        @media (min-width: 769px)
+          grid-column: 2/4
+          max-width: 37.5vw
+          margin:  18vh 0 13vh
+        @media (max-width: 768px)
+          grid-column: span 2
+          grid-row: 1
+      & .opening__info_item:nth-child(2)
+        grid-column: 1
+        @media (min-width: 769px)
+          grid-row: 1 / span 2
         .img
-          padding-top: 32vh
+          padding-top: 18vh
+          @media (min-width: 769px)
+            padding-top: 32vh
         .text
           top: 0
           translate: -50% 0
           width: 110%
           left: 50%
 
-      &>div:nth-child(2)
+      & .opening__info_item:nth-child(3)
         grid-column: 2/4
         display: flex
         flex-direction: column
         justify-content: center
         align-items: center
-        padding-bottom: 20vh
-        p
-          text-align: center
-          font-size: var(--fs-md)
-          margin:  18vh 0 13vh
-          max-width: 37.5vw
+        padding:  0 0 20vh
+        @media (max-width: 768px)
+          grid-row: 3
+          grid-column: span 2
+          padding: 5vh 0 10vh
         .img
-          max-width: 32.292vw
+          max-width: 77.67vw
+          @media (min-width: 769px)
+            max-width: 32.292vw
         .text
-          max-width: 25vw
+          max-width: 58.252vw
           bottom: 0
           left: 0
+          @media (min-width: 769px)
+            max-width: 25vw
 
-      &>div:last-child
+      & .opening__info_item:last-child
         display: flex
         flex-direction: column
+        grid-column: 2
+        @media (min-width: 769px)
+          grid-column: 4
+          grid-row: 1 / span 2
         .img
-          max-width: 13.281vw
           margin-left: auto
-          margin-top: 25vh
+          margin-top: 5vh
+          max-width: 29.126vw
+          @media (min-width: 769px)
+            margin-top: 25vh
+            max-width: 13.281vw
         .text
           position: static
-          max-width: 18.229vw
+          @media (min-width: 769px)
+            max-width: 18.229vw

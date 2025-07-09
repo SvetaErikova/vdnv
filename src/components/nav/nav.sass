@@ -1,0 +1,96 @@
+.nav
+  position: fixed
+  bottom: 2vh
+  left: 50%
+  background-color: rgba(30, 30, 30, 0.9)
+  color: var(--text-white)
+  translate: -50% 0
+  padding: 1vh 1.25vw
+  backdrop-filter: blur(40px)
+  border-radius: 8px
+  z-index: 20
+  @media (max-width: 600px)
+  &__wrapper
+    display: flex
+    justify-content: space-between
+    align-items: center
+    gap: 16px
+  &__scroll
+    position: relative
+    width: 100%
+    height: 100%
+    flex-grow: 1
+    overflow: hidden
+    &:after,
+    &:before
+      display: flex
+      justify-content: center
+      align-items: center
+      position: absolute
+      inset: 0
+      background-color: rgba(30, 30, 30, 0.9)
+    //&:after
+    //  content: 'Закрыть меню'
+    //&:before
+    //  content: 'Путешествуем во времени...'
+
+
+.timeline
+  position: relative
+  height: 100%
+  width: 100%
+  padding: 0 20px
+  mask-image: linear-gradient(86deg, rgba(0, 0, 0, 0) 10%, rgb(0, 0, 0) 50%, rgb(0, 0, 0) 50%, rgba(0, 0, 0, 0) 90%)
+  max-width: 250px
+  &:after
+    content: ''
+    position: absolute
+    height: 19px
+    width: 1px
+    background-color: #FFFFFF
+    translate: -50% 0
+    left: 50%
+    bottom: 0
+    z-index: 2
+  &__labels
+    display: flex
+    justify-content: space-between
+    position: relative
+    height: 100%
+    overflow-x: auto
+    scrollbar-width: none
+    -ms-overflow-style: none
+    &::-webkit-scrollbar
+      display: none
+
+  &__label
+    color: #fff
+    font-size: 13px
+    opacity: 0.3
+    transition: opacity 0.3s ease
+    min-width: 200px
+    padding-bottom: 20px
+    &:after
+      content: ''
+      position: absolute
+      bottom: 0
+      width: 100%
+      height: 12px
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1042' height='12' viewBox='0 0 1042 12' fill='none'%3E%3Cpath d='M1 0V12' stroke='white'/%3E%3Cpath d='M21 0V12' stroke='white'/%3E%3Cpath d='M41 0V12' stroke='white'/%3E%3Cpath d='M61 0V12' stroke='white'/%3E%3Cpath d='M81 0V12' stroke='white'/%3E%3Cpath d='M101 0V12' stroke='white'/%3E%3Cpath d='M121 0V12' stroke='white'/%3E%3Cpath d='M141 0V12' stroke='white'/%3E%3Cpath d='M161 0V12' stroke='white'/%3E%3Cpath d='M181 0V12' stroke='white'/%3E%3Cpath d='M201 0V12' stroke='white'/%3E%3Cpath d='M221 0V12' stroke='white'/%3E%3Cpath d='M241 0V12' stroke='white'/%3E%3Cpath d='M261 0V12' stroke='white'/%3E%3Cpath d='M281 0V12' stroke='white'/%3E%3Cpath d='M301 0V12' stroke='white'/%3E%3Cpath d='M321 0V12' stroke='white'/%3E%3Cpath d='M341 0V12' stroke='white'/%3E%3Cpath d='M361 0V12' stroke='white'/%3E%3Cpath d='M381 0V12' stroke='white'/%3E%3Cpath d='M401 0V12' stroke='white'/%3E%3Cpath d='M421 0V12' stroke='white'/%3E%3Cpath d='M441 0V12' stroke='white'/%3E%3Cpath d='M461 0V12' stroke='white'/%3E%3Cpath d='M481 0V12' stroke='white'/%3E%3Cpath d='M501 0V12' stroke='white'/%3E%3Cpath d='M521 0V12' stroke='white'/%3E%3Cpath d='M541 0V12' stroke='white'/%3E%3Cpath d='M561 0V12' stroke='white'/%3E%3Cpath d='M581 0V12' stroke='white'/%3E%3Cpath d='M601 0V12' stroke='white'/%3E%3Cpath d='M621 0V12' stroke='white'/%3E%3Cpath d='M641 0V12' stroke='white'/%3E%3Cpath d='M661 0V12' stroke='white'/%3E%3Cpath d='M681 0V12' stroke='white'/%3E%3Cpath d='M701 0V12' stroke='white'/%3E%3Cpath d='M721 0V12' stroke='white'/%3E%3Cpath d='M741 0V12' stroke='white'/%3E%3Cpath d='M761 0V12' stroke='white'/%3E%3Cpath d='M781 0V12' stroke='white'/%3E%3Cpath d='M801 0V12' stroke='white'/%3E%3Cpath d='M821 0V12' stroke='white'/%3E%3Cpath d='M841 0V12' stroke='white'/%3E%3Cpath d='M861 0V12' stroke='white'/%3E%3Cpath d='M881 0V12' stroke='white'/%3E%3Cpath d='M901 0V12' stroke='white'/%3E%3Cpath d='M921 0V12' stroke='white'/%3E%3Cpath d='M941 0V12' stroke='white'/%3E%3Cpath d='M961 0V12' stroke='white'/%3E%3Cpath d='M981 0V12' stroke='white'/%3E%3Cpath d='M1001 0V12' stroke='white'/%3E%3Cpath d='M1021 0V12' stroke='white'/%3E%3Cpath d='M1041 0V12' stroke='white'/%3E%3C/svg%3E")
+      background-repeat: repeat-x
+      background-position: bottom
+      background-size: cover
+      opacity: 0.7
+    &_title
+      position: sticky
+      left: 50%
+      width: max-content
+      translate: -50% 0
+    &:first-child
+      min-width: 408px
+
+    &[data-year="introduction"]
+      transform: translateX(0)
+    &.active
+      opacity: 1
+      color: #f0c14b
