@@ -1,9 +1,63 @@
-.cosmonautics
-  h2.title_year 1984
-  .horizontal
+.cosmonautics#1984
+  .cosmonautics__wrapper
+    h2.title_year 1984
+    .cosmonautics__content
+      .cosmonautics__content_row
+        div
+          p 15 июня 1984
+        div
+          div
+            h3 Международный съезд космонавтов и астронавтов
+            p Космос ВДНХ стала подходящей площадкой для такого важного международного события благодаря своему статусу и современному техническому оснащению
+          div.image-text
+            .text
+              p Случай на съезде
+              span Один из иностранных космонавтов заблудился в технической зоне. Его нашли спустя полчаса — он успел сделать селфи с советскими сантехниками и остался в восторге от «внеземного» уюта
+            .image
+              img(src='/assets/img/1984/1.jpg')
+          div
+            p
+              span  Историческая значимость мероприятия 
+              |заключалась в том, что оно проходило в период активного развития космической отрасли и международного сотрудничества в этой сфере.
+      .cosmonautics__content_row
+        div
+          p События в сфере
+        div
+          .cosmonautics__slider
+            .cosmonautics__card.card
+              .card__content
+                .card__title Полёты космических коралей Союз Т-12 и Салют-7
+                .card__text Космический корабль "Союз Т-12" с Светланой Савицкой, Владимиром Джанибековым и Игорем Волком на борту совершил полет на орбитальную станцию "Салют-7". На фото: космонавты перед стартом на космодроме Байконур,1984 год
+              .card__image
+                figure
+                  img(src='/assets/img/1984/slide-1.jpg')
+                  figcaption © Альберт Пушкарев / Фотохроника ТАСС
+            .cosmonautics__card.card
+              .card__content
+                .card__title Первый выход женщины в открытый космос
+                .card__text Его осуществила Светлана Савицкая. Этот выход был частью более длительного космического полета, который длился с 17 по 29 июля 1984 года, и включал выход в открытый космос длительностью 3 часа 35 минут. 
+              .card__image
+                figure
+                  img(src='/assets/img/1984/slide-2.jpg')
+                  figcaption
+
+
+
+
+
+      .cosmonautics__content_row
+        div
+          img(src='/assets/img/1984/2.jpg')
+          img(src='/assets/img/1984/3.jpg')
+        div
+          p Название «Космос» было выбрано не случайно, а как отражение окружающей архитектурной и тематической среды, связанной с космической тематикой
+          span Расположение гостиницы играет ключевую роль в выборе её названия. «Космос» находится на проспекте Мира, напротив центрального входа ВДНХ.
+        div
+          img(src='/assets/img/1984/4.jpg')
+  .horizontal#2005
     .horizontal__wrapper
       .horizontal__slides
-        .slide
+        .slide.movieClapperboard
           <svg  viewBox="0 0 882 924" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_235_2871)">
           <path d="M1 336.591C1 324.725 10.6193 315.105 22.4853 315.105H881.001V901.474C881.001 913.34 871.382 922.96 859.516 922.96H22.4853C10.6193 922.96 1 913.34 1 901.474V336.591Z" fill="white" fill-opacity="0.05"/>
@@ -41,13 +95,26 @@
           </defs>
           <text fil='#fff' x='100' y='100'>В 1984 году началась история гостиницы в кино. Первое появление случилось в легендарном советском фильме «Гостья из будушего»</text>
           </svg>
-        .slide
+        .slide.guestFromFuture
           h2.title_year 1984
-          img.back(src='/assets/img/1984/horizontal-bck-2.jpg')
-          img.front.anim(src='/assets/img/1984/horizontal-front-2.png')
+          picture.back
+            source(srcset="/assets/img/1984/horizontal-bck-2-mob.jpg" media="(max-width: 768px)")
+            img(src='/assets/img/1984/horizontal-bck-2.jpg')
+          picture.front.anim
+            source(srcset="/assets/img/1984/horizontal-front-2-mob.png" media="(max-width: 768px)")
+            img(src='/assets/img/1984/horizontal-front-2.png')
           img.logo(src='/assets/img/1984/horizontal-logo-2.svg')
-        .slide
+        .slide.dayWatch
           h2.title_year.anim 2005
-          img.back(src='/assets/img/1984/horizontal-bck-3.jpg')
-          img.front(src='/assets/img/1984/horizontal-front-3.png')
+          picture.back
+            source(srcset="/assets/img/1984/horizontal-bck-3-mob.jpg" media="(max-width: 768px)")
+            img(src='/assets/img/1984/horizontal-bck-3.jpg')
+          picture.front
+            source(srcset="/assets/img/1984/horizontal-front-3-mob.png" media="(max-width: 768px)")
+            img(src='/assets/img/1984/horizontal-front-3.png')
           img.logo(src='/assets/img/1984/horizontal-logo-3.svg')
+  .horizontal__note
+    .horizontal__note_content
+      p Фильм Тимура Бекмамбетова принёс гостинице всеобщую известность
+      span Образ Жанны Фриске за рулём красной машины, проезжающей по фасаду, стал культовым для своего поколения.
+

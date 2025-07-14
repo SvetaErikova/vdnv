@@ -16,35 +16,53 @@
     color: var(--text-white)
     text-align: center
     &_title
-      font-size: 7.083vw
+      font-size: 19.139vw
       line-height: .9
+      @media (min-width: 769px)
+        font-size: 7.083vw
     &_subtitle
-      font-size: 2.083vw
+      font-size: 4.785vw
       line-height: 1.2
+      @media (min-width: 769px)
+        font-size: 2.083vw
   &__wrapper
-    padding: 0 2.188vw
-    display: grid
-    grid-template-columns: repeat(2, 1fr)
-    gap: 20vh
-    align-items: flex-start
+    padding: 0 2.188vw var(--p-80)
+
+    display: flex
+    flex-direction: column
+    gap: 50vh
+    @media (min-width: 769px)
+      gap: 20vh
+      align-items: flex-start
+      display: grid
+      grid-template-columns: repeat(2, 1fr)
   &__item
     background: rgba(255, 255, 255, 0.15)
     backdrop-filter: blur(40px)
-    padding: 1.667vw
+    padding: 5.742vw
     border-radius: 12px
-    max-width: 360px
     color: #FFFFFF
+    @media (min-width: 769px)
+      max-width: 23vw
+      padding: 2.083vw
     p
-      font-size: 1.667vw
+      font-size: 3.589vw
+
       line-height: 1.2
+      margin-bottom: 0.625vw
+      @media (min-width: 769px)
+        font-size: 1.667vw
     span
-      font-size: 1.146vw
+      font-size: 3.589vw
       line-height: 1.5
+      @media (min-width: 769px)
+        font-size: 1.146vw
     &:nth-child(2)
 
     &:nth-child(even)
-      margin-left: auto
-      margin-top: 40vh
+      @media (min-width: 769px)
+        margin-left: auto
+        margin-top: 40vh
 
 
 

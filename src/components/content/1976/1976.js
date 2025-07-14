@@ -45,11 +45,11 @@ function Project(block){
   });
 
 
-  const projectTitle = block.querySelector('.project__title');
+  // const projectTitle = document.querySelector('.project__title');
 
 // Создаем анимацию/фиксацию
   ScrollTrigger.create({
-    trigger: projectTitle,
+    trigger: block,
     start: "bottom bottom",
     end: "bottom +=100vh",
     pin: true,
@@ -58,10 +58,10 @@ function Project(block){
   });
 }
 
-let project = document.querySelector('.project');
-if(project){
+let projectTitle = document.querySelector('.project__title');
+if(projectTitle){
   document.addEventListener('DOMContentLoaded', () => {
-    Project(project)
+    Project(projectTitle)
   })
 }
 ;

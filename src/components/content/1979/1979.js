@@ -3,10 +3,10 @@ function Opening(block){
     x: '-30%', // Движение на 20% вправо
     ease: 'none',
     scrollTrigger: {
-      trigger: '.opening__anim',
+      trigger: '.opening .opening__anim .human',
       start: 'bottom bottom',
       end: 'bottom top',
-      scrub: true,
+      scrub: 1.2,
       markers: false
     }
   });
@@ -18,7 +18,7 @@ function Opening(block){
       trigger: '.opening__anim',
       start: window.innerWidth <= 768 ? '70% center' : '60% center',
       end: window.innerWidth <= 768 ? 'bottom top' : 'bottom center',
-      scrub: true,
+      scrub: 1.2,
       markers: false
     }
   });
@@ -29,8 +29,8 @@ function Opening(block){
       trigger: '.opening__anim',
       start:  window.innerWidth <= 768 ? '70% bottom' : '50% bottom',
       end: 'bottom top',
-      scrub: true,
-      markers: true
+      scrub: 1.2,
+      markers: false
     }
   });
   gsap.to('.opening .opening__gallery_wrapper', {
@@ -40,7 +40,7 @@ function Opening(block){
       trigger: '.opening__gallery',
       start: 'top bottom',
       end: 'bottom top',
-      scrub: true,
+      scrub: 1.2,
       markers: false
     }
   });
@@ -58,7 +58,7 @@ function Opening(block){
           trigger: textElement.closest('.wrapper'),
           start: 'top 80%',
           end: 'bottom 20%',
-          scrub: 1,
+          scrub: 1.2,
           markers: false
         }
       }

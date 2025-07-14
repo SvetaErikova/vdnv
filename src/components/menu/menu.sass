@@ -1,0 +1,95 @@
+.menu
+  position: fixed
+  inset: 0
+  z-index: 50
+  display: flex
+  justify-content: center
+  align-items: flex-end
+  //
+  opacity: 0
+  pointer-events: none
+  translate: 0 20%
+  transition: .2s ease-in-out
+  &__wrapper
+
+    background: #1E1E1EE5
+    backdrop-filter: blur(40px)
+    color: #fff
+    border-radius: 8px
+
+    @media (min-width: 769px)
+
+      max-width: 29.688vw
+      margin-bottom: 20vh
+
+  &__timeline
+    padding: 0.625vw 1.667vw
+    display: flex
+    flex-direction: column
+    //border-left: 1px solid rgba(255, 255, 255, 0.12)
+    //&:after
+    //  content: ''
+    //  width: 1px
+    //  height: 90%
+
+    &_item
+      position: relative
+      padding: 1.042vw 0 1.042vw 20px
+      //border-left: 1px solid rgba(255, 255, 255, 0.12)
+      opacity: .5
+      &:before
+        content: ''
+        position: absolute
+        height: 100%
+        left: 0
+        top: 0
+        width: 1px
+        background-color: rgba(255, 255, 255, 0.12)
+      &:last-child:before,
+      &:first-child:before
+        height: 50%
+      &:first-child:before
+        bottom: 0
+        top: auto
+      &:after
+        content: ''
+        position: absolute
+
+        left: -3px
+        background-color: #fff
+        border-radius: 50px
+        translate: 0 -50%
+
+        @media (min-width: 769px)
+          width: 6px
+          height: 6px
+          top: calc(50% - 3px)
+      &.is_active
+        opacity: 1
+  &__action
+
+    display: flex
+    align-items: center
+    @media (min-width: 769px)
+      padding: 2.083vw 1.667vw
+      gap: 1.667vw
+      border-top: 1px solid  rgba(255, 255, 255, 0.12)
+    p
+      @media (min-width: 769px)
+        max-width: 18.542vw
+        font-size: 1.042vw
+  .button
+    display: inline-block
+    background-color: #FFFFFF
+    color: #101011
+    border-radius: 4px
+
+    line-height: 1em
+    @media (min-width: 769px)
+      padding: 0.625vw 1.042vw
+      font-size: 0.833vw
+
+.open_menu .menu
+    opacity: 1
+    pointer-events: auto
+    translate: 0 0

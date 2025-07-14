@@ -1,2 +1,88 @@
 .footer
+  position: relative
+  overflow: hidden
+  height: 100vh
+  &__wrapper
+    display: flex
+    justify-content: center
+    align-items: center
+    margin: 0 var(--container)
+    height: 100%
+    background: linear-gradient(90deg,rgba(0, 0, 0, 0.06) 0%,transparent 1px,transparent calc(25% - 1px),rgba(0, 0, 0, 0.06) calc(25% - 1px),rgba(0, 0, 0, 0.06) 25%,transparent 25%,transparent calc(50% - 1px),rgba(0, 0, 0, 0.06) calc(50% - 1px),rgba(0, 0, 0, 0.06) 50%,transparent 50%,transparent calc(75% - 1px),rgba(0, 0, 0, 0.06) calc(75% - 1px),rgba(0, 0, 0, 0.06) 75%,transparent 75%,transparent calc(100% - 1px),rgba(0, 0, 0, 0.06) 100%,)
+    @media (min-width: 769px)
+      display: grid
+      grid-template-columns: repeat(4, 1fr)
+  &__content
+    position: relative
+    display: flex
+    flex-direction: column
+    align-items: center
+    background-color: #FFFFFF
+    gap: 3.828vw
+    margin: auto 1px
+    padding: var(--p-80)
+    @media (min-width: 769px)
+      max-width: 45.833vw
+      gap: 1.667vw
+      grid-column: 2/4
+    &:after
+      pointer-events: none
+      content: ''
+      position: absolute
+      height: 100%
+      border-top: 1px solid rgba(0, 0, 0, 0.06)
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06)
+      width: 99vw
+      top: 50%
+      left: 50%
+      translate: -50% -50%
+    &_text
+      text-align: center
+      font-size: 4.785vw
+      @media (min-width: 769px)
+        font-size: 2.083vw
+    .button
+      display: inline-block
+      border: 1px solid rgba(167, 168, 171, 1)
+      border-radius: 4px
+      padding: 0.9vw 1.042vw
+      font-size: 1.25vw
+      line-height: 1em
+  .timeline
+    @media (min-width: 769px)
+      max-width: 22.396vw
+    &__labels
+    &__label
+      color: #121212
+      opacity: 1
+      font-size: 1.458vw
+      min-width: auto
+      width: 100%
+      &:after
+        filter: invert(1)
+        background: linear-gradient(90deg,transparent 0%,transparent calc(1.823vw - 1px),rgba(255, 255, 255, 0.3) calc(1.823vw - 1px),rgba(255, 255, 255, 0.3) 1.823vw,transparent 1.823vw,transparent 100%)
+        background-size: 1.823vw 100%
+        width: 200%
+        animation: scrollLine 15s linear infinite
+    &:after
+      filter: invert(1)
+
+  &__note
+    position: absolute
+    translate: -50% 0
+    left: 50%
+    bottom: 2vh
+    color: rgba(18, 18, 18, 0.5)
+    font-size: 3.349vw
+    white-space: nowrap
+    @media (min-width: 769px)
+      font-size: 0.833vw
+
+
+@keyframes scrollLine
+  0%
+    transform: translateX(0)
+
+  100%
+    transform: translateX(-50%)
 

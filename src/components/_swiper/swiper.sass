@@ -1,163 +1,20 @@
-.swiper-slide,
-.card,
-.gallery--item,
-.card-detail,
-.banner-group .banner
-  -webkit-transform: translate3d(0, 0, 0)
-  -webkit-backface-visibility: hidden
-
-.swiper-wrapper
-  -webkit-transform-style: preserve-3d
-
-.swiper--next,
-.swiper--prev,
-.swiper-button-next,
-.swiper-button-prev
-  cursor:  pointer
-  display: flex
-  justify-content: center
-  align-items: center
-  aspect-ratio: 1/1
-  width: clamp(36px, calc(36px + (54 - 36) * ((100vw - 1024px) / (1920 - 1024))), 54px)
-  height: clamp(36px, calc(36px + (54 - 36) * ((100vw - 1024px) / (1920 - 1024))), 54px)
-  pointer-events: all
-  transition: var(--transition)
-  border-radius: var(--border-corner-button)
-  &:after
-    font-size: 1.3rem
-    font-family: 'icomoon' !important
-  &:before
-    transition: .15s linear !important
-  &.swiper-button-disabled
-    opacity: 0.4
-    cursor: auto
-    box-shadow: unset !important
-
-.swiper-button-disabled
-  pointer-events: none
-
-.swiper-button-prev,
-.swiper--prev
-  &:after
-    z-index: 3
-    content: "\e909"
-
-.swiper-button-next,
-.swiper--next
-  &:after
-    z-index: 3
-    content: "\e916"
-
-.swiper-pagination
-  width: fit-content
-
-.swiper-pagination-bullets
-  --swiper-pagination-bottom: 12px
-
-
-.block_list-slider,
-.content_events,
-.block_banner:not(.block_banner-hero),
-.gallery
-  .slider_controls
-    margin-top: var(--g-20)
-    z-index: 2
-    .swiper-pagination-container
-      width: 100%
-      margin-right: 20px
-      position: relative
-    .swiper-pagination-progressbar
-      translate:  0 -50%
-      top: 50%
-      border: 1px solid var(--c-border-secondary)
-      background-color: transparent
-      height: 8px
-      width: 100%
-      border-radius: 20px
-      overflow: hidden
-    .swiper-pagination-progressbar .swiper-pagination-progressbar-fill
-      background-color: var(--c-surface-dark)
-      border-radius: 20px
-    .button
-      padding: 15px
 .slider_controls
   display: flex
-  justify-content: space-between
-  pointer-events: none
-  gap: 10px
-.swiper-pagination
-  display: flex
-  gap: 8px
-.swiper-button-prev,
-.swiper-button-next
-  border: 1px solid var(--c-border-default, #ECEDEE)
-  &:hover,
-  &:focus
-    border-color: rgba(20, 26, 37, 1)
-  &.swiper-button-disabled
-    opacity: 0.5
-.swiper-button-lock,
-.swiper-pagination-lock
-  display: none
-.block_list-slider-v2,
-.block_image_text-slider
-  .slider_controls
-    margin-top: auto
-    width: 100%
-    align-items: center
-    .swiper-button-prev,
-    .swiper-button-next
-      //color: var(--c-surface-default)
-      border: 1px solid currentColor
-    .swiper-pagination
-      margin-left: auto
+  justify-content: center
+  gap: 3.333vw
+  .swiper--prev,
+  .swiper--next
+    aspect-ratio: 1/1
+    width: 5.742vw
+    background-repeat: no-repeat
+    background-size: contain
+    cursor: pointer
+    @media (min-width: 769px)
+      width: 1.667vw
+    &[class*="-disabled"]
+      opacity: .3
+  .swiper--prev
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.0411 7.29289C14.4316 7.68342 14.4316 8.31658 14.0411 8.70711L7.7482 15H26.6673C27.2196 15 27.6673 15.4477 27.6673 16C27.6673 16.5523 27.2196 17 26.6673 17H7.7482L14.0411 23.2929C14.4316 23.6834 14.4316 24.3166 14.0411 24.7071C13.6506 25.0976 13.0174 25.0976 12.6269 24.7071L4.62688 16.7071C4.23635 16.3166 4.23635 15.6834 4.62688 15.2929L12.6269 7.29289C13.0174 6.90237 13.6506 6.90237 14.0411 7.29289Z' fill='white'/%3E%3C/svg%3E")
 
-
-.swiper-pagination-bullet
-  display: inline-block
-  width: 16px
-  height: 16px
-  border: 1px solid var(--c-surface-default)
-  border-radius: 50px
-  &.swiper-pagination-bullet-active
-    background-color: var(--c-surface-default)
-
-.swiper-notification
-  display: none
-
-.block--image-slider
-  position: relative
-  &:before
-    pointer-events: none
-    position: absolute
-    z-index: 2
-    top: 0
-    left: 0
-    width: 100%
-    height: 100%
-    content: ''
-    -webkit-transition: var(--transition)
-    transition: var(--transition)
-    opacity: .4
-    background: linear-gradient(0deg, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .1965161064) 40%, rgba(220, 220, 220, 0) 100%)
-  .slider_controls
-    width: auto
-    display: flex
-    align-items: center
-    gap: 16px
-    z-index: 2
-    bottom: var(--g-32)
-    left: var(--g-32)
-    right: var(--g-32)
-    top: auto
-    position: absolute
-    @media(max-width: 768px)
-      justify-content: center
-    .swiper-button-next,
-    .swiper-button-prev
-      @media(max-width: 768px)
-        display: none
-    .swiper-pagination
-      @media(min-width: 769px)
-        margin-left: auto
-
+  .swiper--next
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M17.9602 7.29289C18.3507 6.90237 18.9839 6.90237 19.3744 7.29289L27.3744 15.2929C27.7649 15.6834 27.7649 16.3166 27.3744 16.7071L19.3744 24.7071C18.9839 25.0976 18.3507 25.0976 17.9602 24.7071C17.5697 24.3166 17.5697 23.6834 17.9602 23.2929L24.2531 17H5.33398C4.7817 17 4.33398 16.5523 4.33398 16C4.33398 15.4477 4.7817 15 5.33398 15H24.2531L17.9602 8.70711C17.5697 8.31658 17.5697 7.68342 17.9602 7.29289Z' fill='white'/%3E%3C/svg%3E")

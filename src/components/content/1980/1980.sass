@@ -1,27 +1,65 @@
 .olympics
   background-color: #FBFBF9
+  position: relative
+  &:after
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
   &__top
     display: flex
     flex-direction: column
   .title_year
     text-align: center
     color: rgba(195, 35, 4, 1)
-  //&__build
-  //  position: relative
-  //  .image-mask,
-  //  .image-moskow
-  //    position: absolute
-  //    top: 0
-  //    left: 0
-  //    right: 0
-  //    object-fit: contain
-  //    height: auto
-  //  .image-mask
-  //    z-index: 2
-  //
-  //  .image-moskow
-  //    z-index: 1
+    padding-bottom: 20vh
+  &__center
+    position: relative
+    //&:after,
+    //&:before
+    //  content: ''
+    //  position: absolute
+    //  background-image: url("../img/1980/1.svg")
+    //  height: 100%
+    //  width: 7.708vw
+    //  z-index: 2
 
+  &__build
+    position: relative
+    .image-mask,
+    .image-moskow
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      object-fit: contain
+      height: auto
+    .image-mask
+      z-index: 2
+
+    .image-moskow
+      z-index: 1
+    &:after
+      content: ''
+      position: absolute
+      aspect-ratio: 790/1200
+      translate: -50% -50%
+      top: 15%
+      left: 50%
+      width: 41.146vw
+      background-image: url("../img/1980/star.svg")
+  &__gallery
+    overflow: hidden
+    &_wrapper
+      display: grid
+      grid-template-columns: repeat(4, 1fr)
+      width: 180%
+      gap: 1.667vw
+      @media (min-width: 769px)
+        width: 140%
   &__image_text
     display: flex
     flex-direction: column-reverse
@@ -61,23 +99,34 @@
       display: flex
   &__bottom
     position: relative
-    height: 100vh
+    height: 60vh
     color: var(--text-white)
     background-color: #C32304
     display: flex
     align-items: center
     justify-content: center
+    @media (min-width: 769px)
+      height: 100vh
     &_text
       font-size: var(--fs-md)
       line-height: 1.3
       text-align: center
+      display: flex
+      flex-direction: column
+      gap: 1vw
       @media (min-width: 769px)
         max-width: 45.313vw
     &_image
       position: absolute
-      width: 100%
-      top: var(--p-80)
-      bottom: var(--p-80)
+      //width: 100%
+      //top: var(--p-80)
+      //bottom: var(--p-80)
+      display: flex
+      translate: -50% -50%
+      left: 50%
+      top: 50%
+      aspect-ratio: 184/431
+      height: 80%
       img
         object-position: bottom center
         object-fit: contain

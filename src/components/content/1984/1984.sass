@@ -1,13 +1,285 @@
 .cosmonautics
   background-color: #03081B
   color: var(--text-white)
-  .title_year
+  position: relative
+  --border: 1px solid rgba(255, 255, 255, 0.12)
+
+  &:after
+    pointer-events: none
+    content: ''
+    position: absolute
+    background-image: url("../img/1984/bck.png")
+    background-repeat: no-repeat
+    background-size: contain
+    width: 60%
+    left: 50%
+    aspect-ratio: 1/1
+    top: 0
+    z-index: 1
+    translate: -50% 0
+
+  &:before
+    pointer-events: none
+    content: ''
+    position: absolute
+    background-image: url("../img/1984/rocket.png")
+    background-repeat: no-repeat
+    background-size: contain
+    width: 70vw
+    aspect-ratio: 960/1390
+    left: auto
+    right: 15vw
+    top: 20vw
+    z-index: 1
+    @media (min-width: 769px)
+      width: 40vw
+      top: 32vh
+      right: 8vw
+  &__wrapper
+    overflow: hidden
+    position: relative
+    @media (max-width: 768px)
+      margin: 0 var(--container)
+      border-left: var(--border)
+      border-right: var(--border)
+    @media (min-width: 769px)
+      &:after
+        pointer-events: none
+        content: ''
+        position: absolute
+        background: linear-gradient(90deg,rgba(255, 255, 255, 0.12) 0%,transparent 1px,transparent calc(25% - 1px),rgba(255, 255, 255, 0.12) calc(25% - 1px),rgba(255, 255, 255, 0.12) 25%,transparent 25%,transparent calc(50% - 1px),rgba(255, 255, 255, 0.12) calc(50% - 1px),rgba(255, 255, 255, 0.12) 50%,transparent 50%,transparent calc(75% - 1px),rgba(255, 255, 255, 0.12) calc(75% - 1px),rgba(255, 255, 255, 0.12) 75%,transparent 75%,transparent calc(100% - 1px),rgba(255, 255, 255, 0.12) 100%,)
+        top: 0
+        bottom: 0
+        left: var(--container)
+        right: var(--container)
+    & > .title_year
+      position: relative
+      padding: 13.397vw 0 20vw
+      @media (min-width: 769px)
+        padding: 0
+      &:after
+        pointer-events: none
+        content: ''
+        position: absolute
+        background-image: url("../img/1984/stars.svg")
+        background-repeat: no-repeat
+        background-size: contain
+
+        @media (max-width: 768px)
+          width: 100vw
+          height: 150%
+          top: 100%
+          left: 50%
+          translate: -50% -50%
+        @media (min-width: 769px)
+          inset: 0
+  &__content
+    &_row
+      padding: 0
+      overflow: hidden
+      margin-bottom: 11.483vw
+      @media (min-width: 769px)
+        display: grid
+        grid-template-columns: repeat(4,1fr)
+        align-items: start
+        padding: 0 var(--container)
+        margin-bottom: 9.375vw
+      p
+        line-height: 1.5
+        @media (min-width: 769px)
+          font-size: 1.458vw
+      h3
+        font-size: 7.656vw
+        margin-bottom: 5.742vw
+        @media (min-width: 769px)
+          font-size: 3.333vw
+          margin-bottom: var(--p-80)
+    &_row:first-child
+      &> div:first-child
+        border-bottom: var(--border)
+        font-size: 5.263vw
+        color: rgba(255, 255, 255, 0.3)
+        padding: 0 5.742vw 5.742vw
+        line-height: 1.2
+        @media (min-width: 769px)
+          font-size: 1.667vw
+          padding: 0 var(--p-80) 2.083vw
+      &>div:last-child
+        @media (min-width: 769px)
+          grid-column: 2/4
+        &>div:first-child
+          padding:  2.5vw var(--p-80)
+          @media (min-width: 769px)
+            padding: 0 var(--p-80) 4.167vw
+        &>div
+          &:last-child
+            padding: 3.333vw var(--p-80)
+            span
+              color: #7C9CFF
+    .image-text
+      margin: 0 1px
+      position: relative
+      z-index: 2
+      background-color: rgba(2, 8, 27, 1)
+      display: flex
+      flex-direction: column-reverse
+      gap: 5.742vw
+      border-top: var(--border)
+      border-bottom: var(--border)
+      padding: var(--p-80)
+      @media (min-width: 769px)
+        display: grid
+        grid-template-columns: 2fr 1fr
+        gap: var(--p-80)
+        padding: 4.167vw
+      div
+        display: flex
+        flex-direction: column
+        gap: 8px
+        @media (min-width: 769px)
+          gap: 16px
+      span
+        font-size: 3.589vw
+        line-height: 1.5
+        color: rgba(255, 255, 255, 0.8)
+        @media (min-width: 769px)
+          font-size: 1.146vw
+      .image
+        position: relative
+        &:after
+          pointer-events: none
+          content: ''
+          position: absolute
+          background-image: url("../img/1984/image-text-bck.png")
+          background-repeat: no-repeat
+          background-size: contain
+          width: 250%
+          aspect-ratio: 1/1
+          left: 50%
+          top: 50%
+          translate: -50% -50%
+          z-index: -1
+
+    &_row:nth-child(2)
+      &> div:first-child
+        border-bottom: var(--border)
+        font-size: 5.263vw
+        color: rgba(255, 255, 255, 0.3)
+        padding: 0 5.742vw 5.742vw
+        line-height: 1.2
+        @media (min-width: 769px)
+          font-size: 1.667vw
+          padding: 0 var(--p-80) 2.083vw
+      &>div:last-child
+        grid-column: 2/4
+    &_row:last-child
+      position: relative
+      @media (max-width: 768px)
+        display: grid
+        grid-template-columns: 1fr 1fr
+      &:after
+        pointer-events: none
+        content: ''
+        position: absolute
+        height: 99%
+        border-top: var(--border)
+        border-bottom: var(--border)
+        width: 100vw
+        top: 50%
+        left: 50%
+        translate: -50% -50%
+      div
+        padding: var(--p-80)
+      img
+        filter: grayscale(100%)
+      div:first-child
+        grid-column: 1
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        gap: var(--p-80)
+      div:nth-child(2)
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        height: 100%
+        gap: 4.785vw
+        @media (min-width: 769px)
+          gap: 2.083vw
+          grid-column: 2/4
+        @media (max-width: 768px)
+          grid-column: span 2
+          grid-row: 1
+          padding: var(--p-80)
+          border-bottom: var(--border)
+        p
+          font-size: 4.785vw
+          line-height: 1.2
+          @media (min-width: 769px)
+            font-size: 2.083vw
+        span
+          font-size: 3.589vw
+          line-height: 1.5
+          opacity: .8
+          @media (min-width: 769px)
+            font-size: 1.146vw
+      div:last-child
+
+
+
+  &__slider
+    padding: 2.5vw 0 0
+    clip-path: inset(0 -150% 0 0 )
+    @media (min-width: 769px)
+      padding: 0
+    .card
+      padding: 0 var(--p-80)
+      display: flex
+      flex-direction: column
+      gap: 7.656vw
+      @media (min-width: 769px)
+        gap: 3.333vw
+      &__content
+        display: flex
+        flex-direction: column
+        gap: 24px
+
+      &__title
+        font-size: 4.785vw
+        line-height: 1.2
+        @media (min-width: 769px)
+          font-size: 2.083vw
+      &__text
+        opacity: .8
+        line-height: 1.5
+        font-size: 3.589vw
+        @media (min-width: 769px)
+          font-size: 1.146vw
+      &__image
+        img
+          height: auto
+    .slider_controls
+      margin-top: 3.333vw
+
 
 .horizontal
   padding-top: 20vh
   overflow: hidden
   //height: 100vh
   width: 100%
+  position: relative
+  @media (min-width: 769px)
+    &:after
+      pointer-events: none
+      content: ''
+      position: absolute
+      background: linear-gradient(90deg,rgba(255, 255, 255, 0.12) 0%,transparent 1px,transparent calc(25% - 1px),rgba(255, 255, 255, 0.12) calc(25% - 1px),rgba(255, 255, 255, 0.12) 25%,transparent 25%,transparent calc(50% - 1px),rgba(255, 255, 255, 0.12) calc(50% - 1px),rgba(255, 255, 255, 0.12) 50%,transparent 50%,transparent calc(75% - 1px),rgba(255, 255, 255, 0.12) calc(75% - 1px),rgba(255, 255, 255, 0.12) 75%,transparent 75%,transparent calc(100% - 1px),rgba(255, 255, 255, 0.12) 100%)
+      top: 0
+      bottom: 0
+      left: var(--container)
+      right: var(--container)
   svg
     aspect-ratio: 880/920
     max-width: 880px
@@ -15,6 +287,8 @@
     width: 100%
     height: auto
     margin-bottom: 20vh
+    position: relative
+    z-index: 1
   &__wrapper
     width: 100%
     height: 100vh
@@ -26,6 +300,7 @@
     height: 100vh
 
   .slide
+    //width: calc(100vw - var(--scrollbarWidth))
     width: 100vw
     height: 100vh
     flex-shrink: 0
@@ -33,6 +308,10 @@
     align-items: center
     justify-content: center
     position: relative
+    picture
+      display: flex
+      width: 100%
+      height: 100%
     img
       object-position: center
     .back
@@ -41,6 +320,8 @@
     .title_year
       position: absolute
       z-index: 2
+      @media (max-width: 768px)
+        top: 15vh
     .front
       position: absolute
       z-index: 4
@@ -52,13 +333,51 @@
       z-index: 2
       max-height: 20vh
       object-fit: contain
-    &:nth-child(2)
+    &.movieClapperboard
+      z-index: 3
+      background-color: #03081B
+      padding: 0 var(--container)
+      display: grid
+      grid-template-columns: repeat(4, 1fr)
+      width: calc(100vw - var(--scrollbarWidth))
+      svg
+        grid-column:  2/4
+    &.guestFromFuture
       z-index: 2
       .front
         position: static
         left: 0
-    &:nth-child(3)
+    &.dayWatch
       z-index: 1
-    &:nth-child(1)
-      z-index: 3
-      background-color: #03081B
+      position: relative
+      &:after
+        content: ''
+        position: absolute
+        inset: 0
+        background: linear-gradient(0deg, #060605 0%, rgba(6, 6, 5, 0.991353) 6.67%, rgba(6, 6, 5, 0.96449) 13.33%, rgba(6, 6, 5, 0.91834) 20%, rgba(6, 6, 5, 0.852589) 26.67%, rgba(6, 6, 5, 0.768225) 33.33%, rgba(6, 6, 5, 0.668116) 40%, rgba(6, 6, 5, 0.557309) 46.67%, rgba(6, 6, 5, 0.442691) 53.33%, rgba(6, 6, 5, 0.331884) 60%, rgba(6, 6, 5, 0.231775) 66.67%, rgba(6, 6, 5, 0.147411) 73.33%, rgba(6, 6, 5, 0.0816599) 80%, rgba(6, 6, 5, 0.03551) 86.67%, rgba(6, 6, 5, 0.0086472) 93.33%, rgba(6, 6, 5, 0) 100%)
+
+  &__note
+    background-color: #060605
+    display: flex
+    flex-direction: column
+    align-items: center
+    &_content
+      padding: var(--p-80) var(--container)
+      display: flex
+      flex-direction: column
+      gap: 2.083vw
+      @media (min-width: 769px)
+        max-width: 37.5vw
+    p
+      font-size: 7.656vw
+      line-height: 1.1
+      @media (min-width: 769px)
+        font-size: 2.5vw
+    span
+      font-size: 4.306vw
+      line-height: 1.5
+      @media (min-width: 769px)
+        font-size: 1.146vw
+
+
+
