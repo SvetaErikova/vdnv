@@ -263,23 +263,27 @@
     .slider_controls
       margin-top: 3.333vw
 
-
 .horizontal
-  padding-top: 20vh
+  color: var(--text-white)
+  background-color: #03081B
+  padding-top: 0
   overflow: hidden
-  //height: 100vh
   width: 100%
   position: relative
   @media (min-width: 769px)
-    &:after
-      pointer-events: none
-      content: ''
-      position: absolute
+    padding-top: 25vh
+  &:after
+    pointer-events: none
+    content: ''
+    position: absolute
+    top: 0
+    bottom: 0
+    left: var(--container)
+    right: var(--container)
+    background: linear-gradient(90deg,rgba(255, 255, 255, 0.12) 0%,transparent 1px,transparent calc(var(--container) - 1px), transparent ,transparent calc(100% - 1px),rgba(255, 255, 255, 0.12) 100%)
+    @media (min-width: 769px)
       background: linear-gradient(90deg,rgba(255, 255, 255, 0.12) 0%,transparent 1px,transparent calc(25% - 1px),rgba(255, 255, 255, 0.12) calc(25% - 1px),rgba(255, 255, 255, 0.12) 25%,transparent 25%,transparent calc(50% - 1px),rgba(255, 255, 255, 0.12) calc(50% - 1px),rgba(255, 255, 255, 0.12) 50%,transparent 50%,transparent calc(75% - 1px),rgba(255, 255, 255, 0.12) calc(75% - 1px),rgba(255, 255, 255, 0.12) 75%,transparent 75%,transparent calc(100% - 1px),rgba(255, 255, 255, 0.12) 100%)
-      top: 0
-      bottom: 0
-      left: var(--container)
-      right: var(--container)
+
   svg
     aspect-ratio: 880/920
     max-width: 880px
@@ -293,8 +297,11 @@
     width: 100%
     height: 100vh
     position: relative
+    touch-action: pan-y
+    //overflow: hidden
 
   &__slides
+    touch-action: pan-x
     display: flex
     position: relative
     height: 100vh
@@ -314,6 +321,8 @@
       height: 100%
     img
       object-position: center
+      user-select: none
+      pointer-events: none
     .back
       position: absolute
       object-fit: inherit
@@ -337,11 +346,30 @@
       z-index: 3
       background-color: #03081B
       padding: 0 var(--container)
-      display: grid
-      grid-template-columns: repeat(4, 1fr)
       width: calc(100vw - var(--scrollbarWidth))
+      position: relative
+      @media (min-width: 769px)
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
       svg
-        grid-column:  2/4
+        @media (min-width: 769px)
+          grid-column:  2/4
+      &:after
+        content: 'В 1984 году началась история гостиницы в кино. Первое появление случилось в легендарном советском фильме «Гостья из будушего»'
+        position: absolute
+        translate: -50% -50%
+        top: 50%
+        left: 50%
+        z-index: 100
+        display: block
+        line-height: 1.5
+        font-size: 4.369vw
+        max-width: 73.301vw
+        width: 100%
+        @media (min-width: 769px)
+          top: 55%
+          font-size: 2.083vw
+          max-width: 37.5vw
     &.guestFromFuture
       z-index: 2
       .front
@@ -357,6 +385,7 @@
         background: linear-gradient(0deg, #060605 0%, rgba(6, 6, 5, 0.991353) 6.67%, rgba(6, 6, 5, 0.96449) 13.33%, rgba(6, 6, 5, 0.91834) 20%, rgba(6, 6, 5, 0.852589) 26.67%, rgba(6, 6, 5, 0.768225) 33.33%, rgba(6, 6, 5, 0.668116) 40%, rgba(6, 6, 5, 0.557309) 46.67%, rgba(6, 6, 5, 0.442691) 53.33%, rgba(6, 6, 5, 0.331884) 60%, rgba(6, 6, 5, 0.231775) 66.67%, rgba(6, 6, 5, 0.147411) 73.33%, rgba(6, 6, 5, 0.0816599) 80%, rgba(6, 6, 5, 0.03551) 86.67%, rgba(6, 6, 5, 0.0086472) 93.33%, rgba(6, 6, 5, 0) 100%)
 
   &__note
+    color: var(--text-white)
     background-color: #060605
     display: flex
     flex-direction: column

@@ -1,19 +1,17 @@
 let page = document.querySelector('.page');
-function startPreload() {
-  // Находим элементы
+function startPreload(data) {
   let preloader = document.querySelector('.preloader'),
-    preloaderWrapper = preloader?.querySelector('.preloader_wrapper');
+    preloaderimages = preloader?.querySelectorAll('img');
+    preloaderimages.forEach(img => {
+      let attr = img.getAttribute('data-year');
+      attr === data ? img.classList.remove('hidden') : img.classList.add('hidden');
+    })
 
-  if (page) {
     page.classList.add('loading');
-
     setTimeout(() => {
       page.classList.remove('loading');
     }, 2000);
-  }
 }
-
-
 document.addEventListener('DOMContentLoaded', () => {
   let menu = document.querySelector(".menu");
   if (!menu) return;
@@ -33,8 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function Observer(){
     const links = menu.querySelectorAll('.menu__timeline a');
     const sections = [];
-
-    // Собираем все секции и добавляем обработчики кликов
     links.forEach(link => {
       const hash = link.getAttribute('href').substring(1);
       const section = document.getElementById(hash);
@@ -42,8 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
         sections.push(section);
         link.addEventListener("click", (e) => {
           e.preventDefault();
-          // Вызываем функцию
-          startPreload();
+          let attr = e.target.getAttribute('href').substring(1)
+          startPreload(attr);
           setTimeout(() => {
             section.scrollIntoView({ behavior: "smooth", block: "start" });
           }, 300);
@@ -53,18 +49,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const observer = new IntersectionObserver((entries) => {
-      // Находим первую видимую секцию (с наибольшей площадью пересечения)
       let mostVisibleEntry = null;
       let maxRatio = 0;
-
       entries.forEach(entry => {
         if (entry.intersectionRatio > maxRatio) {
           maxRatio = entry.intersectionRatio;
           mostVisibleEntry = entry;
         }
       });
-
-      // Обновляем классы у всех ссылок
       links.forEach(link => {
         const linkHash = link.getAttribute('href').substring(1);
         link.classList.toggle("is_active",
@@ -75,14 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }, {
       root: null,
       rootMargin: '0px 0px 0px 0px',
-      threshold: [0.1, 0.5, 0.9] // Несколько порогов для точности
+      threshold: [0.1, 0.5, 0.9]
     });
-
-    // Наблюдаем за всеми секциями
     sections.forEach(section => observer.observe(section));
   }
   Observer()
-
-
-
 });

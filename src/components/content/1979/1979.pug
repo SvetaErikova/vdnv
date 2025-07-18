@@ -2,33 +2,41 @@
   .opening__anim
     .opening__title_wrapper
       h2.title_year 1979
-    img.human(src='/assets/img/1979/jo.png')
-    img.cosmos(src='/assets/img/1979/cosmos.png')
-    img.bck(src='/assets/img/1979/bck.jpg')
+    picture
+      source(srcset="/assets/img/1984/horizontal-bck-3-mob.jpg" media="(max-width: 768px)")
+    img.human(src='./assets/img/1979/jo.png')
+    picture
+      source(srcset="/assets/img/1979/cosmos-mob.png" media="(max-width: 768px)")
+      img.cosmos(src='./assets/img/1979/cosmos.png')
+    picture
+      source(srcset="/assets/img/1979/bck-mob.jpg" media="(max-width: 768px)")
+      img.bck(src='./assets/img/1979/bck.jpg')
+
+
     p.text Открытие гостиницы состоялось 18 июля. На торжественной церемонии состоялся концерт и Джо Дассена
 
   .opening__gallery
     .opening__gallery_wrapper
       .card
-        img(src='/assets/img/1979/gallery-1.png')
+        img(src='./assets/img/1979/gallery-1.png')
         .card__title Первые гости
       .card
-        img(src='/assets/img/1979/gallery-2.png')
+        img(src='./assets/img/1979/gallery-2.png')
         .card__title Первые гости обустраиваются в номере
       .card
-        img(src='/assets/img/1979/gallery-3.png')
+        img(src='./assets/img/1979/gallery-3.png')
         .card__title Джо Дассен перед выступлением
   .opening__info
     .wrapper
       .title Впоследствии, множество выдающихся людей выбирали гостиницу Космос ВДНХ, оставляя добрые слова и пожелания в гостевой книге
       .opening__info_item
-        img.img(src='/assets/img/1979/content-1.png')
-        img.text(src='/assets/img/1979/text-1.png')
+        img.img(src='./assets/img/1979/content-1.png')
+        img.text(src='./assets/img/1979/text-1.png')
       .opening__info_item
 
-        img.img(src='/assets/img/1979/content-2.png')
-        img.text(src='/assets/img/1979/text-2.png')
+        img.img(src='./assets/img/1979/content-2.png')
+        img.text(src='./assets/img/1979/text-2.png')
       .opening__info_item
-        img.img(src='/assets/img/1979/content-3.png')
-        img.text(src='/assets/img/1979/text-3.png')
+        img.img(src='./assets/img/1979/content-3.png')
+        img.text(src='./assets/img/1979/text-3.png')
 

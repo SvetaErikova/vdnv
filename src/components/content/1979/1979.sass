@@ -30,18 +30,23 @@
       object-position: bottom center
       bottom: 0
       width: 41.667vw
-      z-index: 2
+      z-index: 4
       right: 0
+      @media (min-width: 769px)
+        z-index: 2
     .text
       position: absolute
-      bottom: 20vh
+      bottom: 30vh
       left: 50%
-      translate: -50% 0
-      font-size: 2.5vw
+      translate: -50% -50%
+      font-size: 4.854vw
+      width: 100%
       z-index: 3
       text-align: center
-      text-shadow: 0 2px 52px rgba(0, 0, 0, 0.65)
+      text-shadow: 0 2px 52px rgba(0, 0, 0, 1)
+      max-width: 85vw
       @media (min-width: 769px)
+        font-size: 2.5vw
         bottom: 50vh
         max-width: 45.833vw
   &__gallery

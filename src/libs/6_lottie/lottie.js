@@ -17,26 +17,26 @@
     return lottie;
 }));
 
-  var hand = document.getElementById('scheme--hand')
-    hand_animation = lottie.loadAnimation({
-    container: hand,
-    // Required
-    path: '../assets/json/hand.json',
-    // Required
-    renderer: 'svg',
-    // Required
-    loop: true,
-    // Optional
-    autoplay: true,
-    // Optional
-    name: "hand" // Name for future reference. Optional.
-
-  });
-
-  window.onload = function () {
-    setTimeout(function () {
-      hand_animation.play();
-    }, 0);
-  };
-
+  // var hand = document.getElementById('scheme--hand')
+  //   hand_animation = lottie.loadAnimation({
+  //   container: hand,
+  //   // Required
+  //   path: '../assets/json/hand.json',
+  //   // Required
+  //   renderer: 'svg',
+  //   // Required
+  //   loop: true,
+  //   // Optional
+  //   autoplay: true,
+  //   // Optional
+  //   name: "hand" // Name for future reference. Optional.
+  //
+  // });
+  //
+  // window.onload = function () {
+  //   setTimeout(function () {
+  //     hand_animation.play();
+  //   }, 0);
+  // };
+  //
 

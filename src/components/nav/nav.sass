@@ -4,23 +4,45 @@
   left: 50%
   background-color: rgba(30, 30, 30, 0.9)
   color: var(--text-white)
+  transition: bottom 0.18s ease-in-out
   translate: -50% 0
-  padding: 1vh 1.25vw
   backdrop-filter: blur(40px)
   border-radius: 8px
   z-index: 150
-  @media (max-width: 600px)
+  width: 100%
+  max-width: calc(100vw - var(--container) * 2)
+  @media (min-width: 769px)
+    max-width: 29.688vw
   &__wrapper
-    display: flex
-    justify-content: space-between
-    align-items: center
+    display: grid
+    grid-template-columns: 12.136vw 1fr 12.136vw
     gap: 16px
+    @media (min-width: 769px)
+      grid-template-columns: 5vw 1fr 5vw
+  &__logo
+    display: flex
+    align-items: center
+    justify-content: center
+    aspect-ratio: 50/30
+    width: 12.136vw
+    padding: 2.913vw  0 2.913vw 3.883vw
+    height: 100%
+    @media (min-width: 769px)
+      padding: 0.938vw  0 0.938vw 1.25vw
+      width: 3.75vw
+    img
+      object-fit: contain
   &__scroll
+    display: flex
+    justify-content: center
     position: relative
     width: 100%
     height: 100%
     flex-grow: 1
     overflow: hidden
+    padding: 2.427vw  0
+    @media (min-width: 769px)
+      padding: 0.938vw  0
     &:after,
     &:before
       display: flex
@@ -30,20 +52,34 @@
       inset: 0
       opacity: 0
       transition: opacity 0.3s ease
+      font-size: 3.883vw
+      pointer-events: none
+      @media (min-width: 769px)
+        font-size: 1.042vw
     &:before
       content: 'Закрыть меню'
     &:after
       content: 'Путешествуем во времени...'
   &__action
+    display: flex
+    align-items: center
+    justify-content: center
     position: relative
-    width: 1.2em
-    aspect-ratio: 1/1
+    width: 100%
+    height: 100%
   [class^=icon-]
     position: absolute
+    //translate: -50% -50%
     background-size: contain
     background-repeat: no-repeat
+    background-position: center
     opacity: 0
-    inset: 0
+    //top: 50%
+    //left: 50%
+    width: 5.34vw
+    aspect-ratio: 1/1
+    @media (min-width: 769px)
+      width: 1.5vw
   .icon-burger
     opacity: 1
     cursor: pointer
@@ -83,14 +119,11 @@
       opacity: 0
       pointer-events: none
 
-
 @keyframes Loading
   0%
     rotate: 0
   100%
     rotate: 360deg
-
-
 
 .timeline
   position: relative
@@ -98,7 +131,6 @@
   width: 100%
   padding: 0 20px
   mask-image: linear-gradient(86deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 20%,  rgb(0, 0, 0) 80%, rgba(0, 0, 0, 0) 100%)
-  max-width: 250px
   &:after
     content: ''
     position: absolute
@@ -111,7 +143,7 @@
     z-index: 2
   &__labels
     display: flex
-    justify-content: space-between
+    //justify-content: space-between
     position: relative
     height: 100%
     overflow-x: auto
@@ -119,35 +151,46 @@
     -ms-overflow-style: none
     &::-webkit-scrollbar
       display: none
-
-  &__label
-    color: #fff
-    font-size: 13px
-    opacity: 0.3
-    transition: opacity 0.3s ease
-    min-width: 200px
-    padding-bottom: 20px
     &:after
       content: ''
       position: absolute
       bottom: 0
-      width: 100%
+      width: 1000%
       height: 12px
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1042' height='12' viewBox='0 0 1042 12' fill='none'%3E%3Cpath d='M1 0V12' stroke='white'/%3E%3Cpath d='M21 0V12' stroke='white'/%3E%3Cpath d='M41 0V12' stroke='white'/%3E%3Cpath d='M61 0V12' stroke='white'/%3E%3Cpath d='M81 0V12' stroke='white'/%3E%3Cpath d='M101 0V12' stroke='white'/%3E%3Cpath d='M121 0V12' stroke='white'/%3E%3Cpath d='M141 0V12' stroke='white'/%3E%3Cpath d='M161 0V12' stroke='white'/%3E%3Cpath d='M181 0V12' stroke='white'/%3E%3Cpath d='M201 0V12' stroke='white'/%3E%3Cpath d='M221 0V12' stroke='white'/%3E%3Cpath d='M241 0V12' stroke='white'/%3E%3Cpath d='M261 0V12' stroke='white'/%3E%3Cpath d='M281 0V12' stroke='white'/%3E%3Cpath d='M301 0V12' stroke='white'/%3E%3Cpath d='M321 0V12' stroke='white'/%3E%3Cpath d='M341 0V12' stroke='white'/%3E%3Cpath d='M361 0V12' stroke='white'/%3E%3Cpath d='M381 0V12' stroke='white'/%3E%3Cpath d='M401 0V12' stroke='white'/%3E%3Cpath d='M421 0V12' stroke='white'/%3E%3Cpath d='M441 0V12' stroke='white'/%3E%3Cpath d='M461 0V12' stroke='white'/%3E%3Cpath d='M481 0V12' stroke='white'/%3E%3Cpath d='M501 0V12' stroke='white'/%3E%3Cpath d='M521 0V12' stroke='white'/%3E%3Cpath d='M541 0V12' stroke='white'/%3E%3Cpath d='M561 0V12' stroke='white'/%3E%3Cpath d='M581 0V12' stroke='white'/%3E%3Cpath d='M601 0V12' stroke='white'/%3E%3Cpath d='M621 0V12' stroke='white'/%3E%3Cpath d='M641 0V12' stroke='white'/%3E%3Cpath d='M661 0V12' stroke='white'/%3E%3Cpath d='M681 0V12' stroke='white'/%3E%3Cpath d='M701 0V12' stroke='white'/%3E%3Cpath d='M721 0V12' stroke='white'/%3E%3Cpath d='M741 0V12' stroke='white'/%3E%3Cpath d='M761 0V12' stroke='white'/%3E%3Cpath d='M781 0V12' stroke='white'/%3E%3Cpath d='M801 0V12' stroke='white'/%3E%3Cpath d='M821 0V12' stroke='white'/%3E%3Cpath d='M841 0V12' stroke='white'/%3E%3Cpath d='M861 0V12' stroke='white'/%3E%3Cpath d='M881 0V12' stroke='white'/%3E%3Cpath d='M901 0V12' stroke='white'/%3E%3Cpath d='M921 0V12' stroke='white'/%3E%3Cpath d='M941 0V12' stroke='white'/%3E%3Cpath d='M961 0V12' stroke='white'/%3E%3Cpath d='M981 0V12' stroke='white'/%3E%3Cpath d='M1001 0V12' stroke='white'/%3E%3Cpath d='M1021 0V12' stroke='white'/%3E%3Cpath d='M1041 0V12' stroke='white'/%3E%3C/svg%3E")
-      background-repeat: repeat-x
-      background-position: bottom
-      background-size: cover
       opacity: 0.7
+      background: linear-gradient(90deg,transparent 0%,transparent calc(3.883vw - 1px),rgba(255, 255, 255, 0.7) calc(3.883vw - 1px),rgba(255, 255, 255, 0.7) 3.883vw,transparent 3.883vw,transparent 100%) repeat
+      background-size: 3.883vw 100%
+      @media (min-width: 769px)
+        background: linear-gradient(90deg,transparent 0%,transparent calc(1.042vw - 1px),rgba(255, 255, 255, 0.7) calc(1.042vw - 1px),rgba(255, 255, 255, 0.7) 1.042vw,transparent 1.042vw,transparent 100%) repeat
+        background-size: 1.042vw 100%
+  &__label
+    color: #fff
+    opacity: 0.3
+    transition: opacity 0.3s ease
+    //min-width: 200px
+    padding-bottom: 20px
+    font-size: 13px
+    flex-shrink: 0
+    width: 300px
+    @media (min-width: 769px)
+      width: 200px
+      font-size: 0.833vw
+    &:first-child
+      width: 600px
+      @media (min-width: 769px)
+        width: 400px
     &_title
       position: sticky
       left: 50%
       width: max-content
       translate: -50% 0
-    &:first-child
-      min-width: 408px
+      padding-left: 3px
 
-    &[data-year="introduction"]
-      transform: translateX(0)
     &.active
       opacity: 1
       color: #f0c14b
+.is_end
+  .nav
+    bottom: 70px
+  .menu__wrapper
+    margin-bottom: calc( var(--navHeight) + 70px + 20px)

@@ -1,12 +1,11 @@
 .project
-  margin-top: -100vh
-  background: linear-gradient(to bottom, transparent 0, transparent 100vh, #e4dfc9 100vh, #e4dfc9 100%)
+  //margin-top: -50vh
+  //background: linear-gradient(to bottom, transparent 0, transparent 50vh, #e4dfc9 50vh, #e4dfc9 100%)
   position: relative
   z-index: 1
-  //
-  //padding-top: 100vh
-  //background-color: #E4DFC9
-
+  //@media (min-width: 769px)
+  //margin-top: -100vh
+  background: linear-gradient(to bottom, transparent 0, transparent 100vh, #e4dfc9 100vh, #e4dfc9 100%)
   .wrapper
     border-left: 1px solid #624E31
     border-right: 1px solid #624E31
@@ -16,9 +15,6 @@
     overflow: hidden
     background-color: #E4DFC9
     z-index: 2
-    margin-top: -90vh
-
-
   h4
     font-size: var(--fs-md)
     line-height: 1.3
@@ -43,7 +39,6 @@
       display: flex
       flex-direction: column
       gap: 5.825vw
-
       @media (min-width: 769px)
         gap: 3.854vw
         border-left: 1px solid #624E31
@@ -64,8 +59,6 @@
             left: calc((var(--p-80) + 0.417vw) * -1)
             width: 0.833vw
             height: 0.833vw
-
-
 
   &-row-2
     @media (min-width: 769px)
@@ -170,21 +163,28 @@
       display: grid
       grid-template-columns: repeat(4, 1fr)
       background: linear-gradient(90deg,transparent 0%,transparent calc(25% - 1px),#624E31 calc(25% - 1px),#624E31 25%,transparent 25%,transparent calc(50% - 1px),#624E31 calc(50% - 1px),#624E31 50%,transparent 50%,transparent calc(75% - 1px),#624E31 calc(75% - 1px),#624E31 75%,transparent 75%)
-    img
+    img,video
       grid-column: 2/4
       width: 100%
+
+
 .project__title
-  height: 200vh
   position: relative
   z-index: 2
+  //height: 100vh
+  //margin-top: -50vh
+  //@media (min-width: 769px)
   margin-top: -100vh
-.title_scrolling
   height: 200vh
+.title_scrolling
+  //height: 100vh
   display: flex
   justify-content: center
   position: absolute
   top: 0
   width: 100%
+  //@media (min-width: 769px)
+  height: 200vh
   &_wrapper
     position: relative
     width: 100%
@@ -192,18 +192,20 @@
   &.-color-white
     color: #FFFFFF
   &.-color-black
-    will-change: clip-path
-    clip-path: inset( 50%  0%  0%   0%)
     z-index: 2
     color: #000
+    will-change: clip-path
+    clip-path: inset( 50%  0%  0%   0%)
   .title_year
     display: flex
     font-variant-numeric: tabular-nums
     position: sticky
     top: 0
-    height: 100vh
+    //height: 50vh
     line-height: 1
     align-items: center
+    //@media (min-width: 769px)
+    height: 100vh
     .digit-container
       display: inline-block
       position: relative

@@ -1,59 +1,134 @@
 .olympics
   background-color: #FBFBF9
   position: relative
-  &:after
-    content: ""
-    position: absolute
-    top: 0
-    left: 0
-    width: 100%
-    height: 100%
-
   &__top
     display: flex
     flex-direction: column
+    margin-bottom: 10vw
+    @media (min-width: 769px)
+      margin-bottom: 25vw
   .title_year
     text-align: center
     color: rgba(195, 35, 4, 1)
-    padding-bottom: 20vh
+
   &__center
     position: relative
-    //&:after,
-    //&:before
-    //  content: ''
-    //  position: absolute
-    //  background-image: url("../img/1980/1.svg")
-    //  height: 100%
-    //  width: 7.708vw
-    //  z-index: 2
-
+    &:after,
+    &:before
+      content: ''
+      position: absolute
+      //background-image: url("../img/1980/1.svg")
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='148' height='1750' viewBox='0 0 148 1750' fill='none'%3E%3Cg filter='url(%23filter0_n_235_2773)'%3E%3Crect y='41.1173' width='19.4922' height='2110.91' fill='%239B1E06'/%3E%3C/g%3E%3Cg filter='url(%23filter1_n_235_2773)'%3E%3Crect x='64.2539' y='0.689941' width='19.4922' height='2191.77' fill='%239B1E06'/%3E%3C/g%3E%3Cg filter='url(%23filter2_n_235_2773)'%3E%3Crect x='128.508' y='41.1173' width='19.4922' height='2110.91' fill='%239B1E06'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_n_235_2773' x='0' y='41.1173' width='19.4922' height='2110.91' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.71428573131561279 0.71428573131561279' stitchTiles='stitch' numOctaves='3' result='noise' seed='9909'/%3E%3CfeColorMatrix in='noise' type='luminanceToAlpha' result='alphaNoise'/%3E%3CfeComponentTransfer in='alphaNoise' result='coloredNoise1'%3E%3CfeFuncA type='discrete' tableValues='1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 '/%3E%3C/feComponentTransfer%3E%3CfeComposite operator='in' in2='shape' in='coloredNoise1' result='noise1Clipped'/%3E%3CfeFlood flood-color='%23AC1D01' result='color1Flood'/%3E%3CfeComposite operator='in' in2='noise1Clipped' in='color1Flood' result='color1'/%3E%3CfeMerge result='effect1_noise_235_2773'%3E%3CfeMergeNode in='shape'/%3E%3CfeMergeNode in='color1'/%3E%3C/feMerge%3E%3C/filter%3E%3Cfilter id='filter1_n_235_2773' x='64.2539' y='0.689941' width='19.4922' height='2191.77' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.71428573131561279 0.71428573131561279' stitchTiles='stitch' numOctaves='3' result='noise' seed='9909'/%3E%3CfeColorMatrix in='noise' type='luminanceToAlpha' result='alphaNoise'/%3E%3CfeComponentTransfer in='alphaNoise' result='coloredNoise1'%3E%3CfeFuncA type='discrete' tableValues='1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 '/%3E%3C/feComponentTransfer%3E%3CfeComposite operator='in' in2='shape' in='coloredNoise1' result='noise1Clipped'/%3E%3CfeFlood flood-color='%23AC1D01' result='color1Flood'/%3E%3CfeComposite operator='in' in2='noise1Clipped' in='color1Flood' result='color1'/%3E%3CfeMerge result='effect1_noise_235_2773'%3E%3CfeMergeNode in='shape'/%3E%3CfeMergeNode in='color1'/%3E%3C/feMerge%3E%3C/filter%3E%3Cfilter id='filter2_n_235_2773' x='128.508' y='41.1173' width='19.4922' height='2110.91' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.71428573131561279 0.71428573131561279' stitchTiles='stitch' numOctaves='3' result='noise' seed='9909'/%3E%3CfeColorMatrix in='noise' type='luminanceToAlpha' result='alphaNoise'/%3E%3CfeComponentTransfer in='alphaNoise' result='coloredNoise1'%3E%3CfeFuncA type='discrete' tableValues='1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 '/%3E%3C/feComponentTransfer%3E%3CfeComposite operator='in' in2='shape' in='coloredNoise1' result='noise1Clipped'/%3E%3CfeFlood flood-color='%23AC1D01' result='color1Flood'/%3E%3CfeComposite operator='in' in2='noise1Clipped' in='color1Flood' result='color1'/%3E%3CfeMerge result='effect1_noise_235_2773'%3E%3CfeMergeNode in='shape'/%3E%3CfeMergeNode in='color1'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E")
+      background-size: contain
+      background-position: top
+      height: calc(100% - 5vw)
+      width: 7.708vw
+      z-index: 3
+      top: 5vw
+    &:after
+      left: 2.083vw
+    &:before
+      right: 2.083vw
+      left: auto
   &__build
-    position: relative
-    .image-mask,
-    .image-moskow
+    &_wrapper
+      z-index: 1
+      position: relative
+      mask-image: url("../img/1980/2.png")
+      mask-position: top
+      mask-repeat: no-repeat
+      mask-size: cover
+      height: auto
+      background-color: #C32304
+      aspect-ratio: 1365/854
+      &:before
+        content: ''
+        position: absolute
+        top: 0
+        width: 100%
+        aspect-ratio: 1365/854
+        background-image: url("../img/1980/mask.png")
+        background-size: contain
+        background-position: center
+        background-repeat: no-repeat
+        //z-index: 2
+      &:after
+        content: ''
+        position: absolute
+        top: auto
+        bottom: -1px
+        width: 100%
+        background: linear-gradient(180deg, rgba(195, 35, 4, 0) 0%, #C32304 100%)
+        aspect-ratio: 1988/385
+        z-index: 2
+    &_moskow
+      max-width: 72.656vw
+      margin: auto
       position: absolute
       top: 0
-      left: 0
-      right: 0
-      object-fit: contain
-      height: auto
-    .image-mask
-      z-index: 2
-
-    .image-moskow
-      z-index: 1
+      translate: -50% 0
+      left: 50%
+      display: flex
+      overflow: hidden
+      height: 100%
+      width: 100%
+      .moskow
+        position: absolute
+        translate: -50% 0
+        top: 4vw
+        left: 50%
+        object-fit: contain
+        object-position: top
+        width: 99%
+        height: 100%
+      .mask
+        top: 0
+        left: 50%
+        position: absolute
+        translate: -50% 0
+        z-index: 2
+        object-position: center
+        //object-fit: cover
+        width: 100%
+        height: 100%
+    &_text
+      position: relative
+      p
+        position: absolute
+        translate: -50% 0
+        left: 50%
+        z-index: 10
+        text-align: center
+        color: var(--text-white)
+        font-size: 4.854vw
+        bottom: -10vh
+        width: 100%
+        max-width: 88vw
+        @media (min-width: 769px)
+          font-size: 2.083vw
+          max-width: 44.167vw
+          bottom: 10vh
     &:after
       content: ''
       position: absolute
       aspect-ratio: 790/1200
       translate: -50% -50%
-      top: 15%
+      top: 10%
       left: 50%
       width: 41.146vw
       background-image: url("../img/1980/star.svg")
+      background-repeat: no-repeat
+      background-size: contain
+      background-position: center
   &__gallery
+    background-color: #C32304
     overflow: hidden
+    padding: 20vh 0 5vw 0
+    @media (min-width: 769px)
+      padding: 5vw 0
     &_wrapper
+      position: relative
+      z-index: 5
       display: grid
       grid-template-columns: repeat(4, 1fr)
       width: 180%

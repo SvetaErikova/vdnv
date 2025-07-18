@@ -1,5 +1,17 @@
 .hero
+  //height: 150vh
+  //@media (min-width: 769px)
   height: 200vh
+  &__logo
+    position: absolute
+    translate: -50% 0
+    left: 50%
+    top: 5%
+    aspect-ratio: 181/72
+    max-width: 29.369vw
+    z-index: 3
+    @media (min-width: 769px)
+      max-width: 9.427vw
   &__media
     height: 100vh
     position: sticky
