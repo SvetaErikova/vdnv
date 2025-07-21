@@ -1,52 +1,44 @@
-function initHorizontalScroll(block) {
-  const slides = block.querySelectorAll(".slide");
-  const slidesContainer = block.querySelector(".horizontal__slides");
+// function initHorizontalScroll(block) {
+//   const slides = block.querySelectorAll(".slide");
+//   const slidesContainer = block.querySelector(".horizontal__slides");
+//   // Создаем анимацию горизонтального движения
+//   const horizontalScroll = gsap.to(slidesContainer, {
+//     x: () => -((slides.length - 1) * window.innerWidth),
+//     ease: "none",
+//     scrollTrigger: {
+//       trigger: ".horizontal__wrapper",
+//       pin: true,
+//       scrub: window.innerWidth <= 768 ? 1 :1.2,
+//       end: () => `${slides.length * 100}%`,
+//       markers: false
+//
+//     }
+//   });
+//   window.addEventListener('load', () => {
+//     slides.forEach((slide, index) => {
+//       const slideTimeline = gsap.timeline({
+//         scrollTrigger: {
+//           trigger: slide,
+//           start: "left center ",
+//           end: "center center",
+//           containerAnimation: horizontalScroll,
+//           scrub: 1.1,
+//           markers: false
+//         }
+//       });
+//       const animElements = slide.querySelectorAll(".anim");
+//       slide.fromTo(animElements, {
+//         translate: "-100vw 0",
+//       }, {
+//         translate: 0,
+//         duration: 1,
+//         ease: "cubic-bezier(0.8, 0, 0.2, 1);",
+//       });
+//     });
+//   })
+//   ScrollTrigger.refresh();
+// }
 
-  // Устанавливаем ширину контейнера слайдов
-  // gsap.set(slidesContainer, {
-  //   width: `${slides.length * 100}vw`
-  // });
-
-  // Создаем анимацию горизонтального движения
-  const horizontalScroll = gsap.to(slidesContainer, {
-    x: () => -((slides.length - 1) * window.innerWidth),
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".horizontal__wrapper",
-      pin: true,
-      scrub: window.innerWidth <= 768 ? 1 :1.2,
-      end: () => `${slides.length * 100}%`,
-      markers: false
-
-    }
-  });
-
-  window.addEventListener('load', () => {
-    slides.forEach((slide, index) => {
-      const slideTimeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: slide,
-          start: "left center ",
-          end: "center center",
-          containerAnimation: horizontalScroll,
-          scrub: 1.1,
-          markers: false
-        }
-      });
-      const animElements = slide.querySelectorAll(".anim");
-      slideTimeline.fromTo(animElements, {
-        translate: "-100vw 0",
-      }, {
-        translate: 0,
-        duration: 1,
-        ease: "cubic-bezier(0.8, 0, 0.2, 1);",
-      });
-    });
-  })
-
-
-  ScrollTrigger.refresh();
-}
 function initCosmomauticsSlider(block){
   let slider_controls = document.createElement('div');
   slider_controls.classList.add('slider_controls');
@@ -80,14 +72,87 @@ function initCosmomauticsSlider(block){
   block.append(slider_controls);
 }
 
+
+function initHorizontalScroll(block) {
+  const slides = block.querySelectorAll('.slide');
+  const slidesContainer = block.querySelector('.horizontal__slides');
+  let lastScrollPosition = 0;
+  let currentDirection = 'forward'; // 'forward' или 'backward'
+
+  const swiper = new Swiper(slidesContainer, {
+    createElements: true,
+    slideClass: 'slide',
+    slidesPerView: 1,
+    direction: 'horizontal',
+    allowTouchMove: false,
+    speed: 1000,
+    on: {
+      slideChangeTransitionStart: function() {
+        const currentSlide = this.slides[this.activeIndex];
+        const prevSlide = this.slides[this.previousIndex];
+
+        if (currentDirection === 'forward') {
+          // Анимация для следующего слайда
+          animateContentIn(currentSlide, 'forward');
+        } else {
+          // Обратная анимация для предыдущего слайда
+          animateContentIn(prevSlide, 'backward');
+        }
+      }
+    }
+  });
+
+  function animateContentIn(slide, direction) {
+    const animElements = slide.querySelectorAll('.anim');
+
+    if (direction === 'forward') {
+      gsap.fromTo(animElements, {
+        x: '-100vw',
+      }, {
+        x: 0,
+        duration: 1.2,
+        ease: 'cubic-bezier(0.8, 0, 0.2, 1)',
+        stagger: 0.1
+      });
+    } else {
+      gsap.fromTo(animElements, {
+        x: '0',
+      }, {
+        x: '-100vw',
+        duration: 1.2,
+        ease: 'cubic-bezier(0.8, 0, 0.2, 1)',
+        stagger: -0.1
+      });
+    }
+  }
+
+  ScrollTrigger.create({
+    trigger: block,
+    start: 'bottom bottom',
+    end: () => `+=${slides.length * 100}%`,
+    pin: true,
+    scrub: 1,
+    markers: false,
+    onUpdate: (self) => {
+      // Определяем направление скролла
+      currentDirection = self.scroll() > lastScrollPosition ? 'forward' : 'backward';
+      lastScrollPosition = self.scroll();
+
+      const progress = self.progress;
+      const slideIndex = Math.floor(progress * slides.length);
+
+      if (swiper.activeIndex !== slideIndex && slideIndex < slides.length) {
+        swiper.slideTo(slideIndex);
+      }
+    }
+  });
+}
+
 let cosmonautics = document.querySelector('.cosmonautics');
 let movie = document.querySelector('.movie');
 if (cosmonautics) {
-
-  document.addEventListener('DOMContentLoaded', () => {
     initCosmomauticsSlider(cosmonautics.querySelector('.cosmonautics__slider'))
     initHorizontalScroll(movie.querySelector('.horizontal'));
-
     gsap.to('.movie .horizontal .anim-rotate',  {
       rotate: '15%',
       translate: '7% 1%',
@@ -100,6 +165,4 @@ if (cosmonautics) {
         markers: false
       }
     });
-  })
-
 }

@@ -6,14 +6,13 @@ function startPreload(data) {
       let attr = img.getAttribute('data-year');
       attr === data ? img.classList.remove('hidden') : img.classList.add('hidden');
     })
-
     page.classList.add('loading');
     setTimeout(() => {
       page.classList.remove('loading');
     }, 2000);
 }
-document.addEventListener('DOMContentLoaded', () => {
-  let menu = document.querySelector(".menu");
+let menu = document.querySelector(".menu");
+function initMenu(){
   if (!menu) return;
   let burger = document.querySelector('.nav .icon-burger');
   let close = document.querySelector('.nav .icon-close');
@@ -28,48 +27,20 @@ document.addEventListener('DOMContentLoaded', () => {
       page.classList.remove('open_menu');
     })
   })
-  function Observer(){
-    const links = menu.querySelectorAll('.menu__timeline a');
-    const sections = [];
-    links.forEach(link => {
-      const hash = link.getAttribute('href').substring(1);
-      const section = document.getElementById(hash);
-      if (section) {
-        sections.push(section);
-        link.addEventListener("click", (e) => {
-          e.preventDefault();
-          let attr = e.target.getAttribute('href').substring(1)
-          startPreload(attr);
-          setTimeout(() => {
-            section.scrollIntoView({ behavior: "smooth", block: "start" });
-          }, 300);
-
-        });
-      }
-    });
-
-    const observer = new IntersectionObserver((entries) => {
-      let mostVisibleEntry = null;
-      let maxRatio = 0;
-      entries.forEach(entry => {
-        if (entry.intersectionRatio > maxRatio) {
-          maxRatio = entry.intersectionRatio;
-          mostVisibleEntry = entry;
-        }
-      });
-      links.forEach(link => {
-        const linkHash = link.getAttribute('href').substring(1);
-        link.classList.toggle("is_active",
-          mostVisibleEntry && linkHash === mostVisibleEntry.target.id
-        );
+  const links = menu.querySelectorAll('.menu__timeline a');
+  links.forEach(link => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        let attr = e.target.getAttribute('href').substring(1)
+        // startPreload(attr);
+        const href = e.target.getAttribute('href');
+        setTimeout(() => {
+          window.location.href = href;
+        }, 300);
       });
 
-    }, {
-      root: null,
-      rootMargin: '0px 0px 0px 0px',
-      threshold: [0.1, 0.5, 0.9]
-    });
-    sections.forEach(section => observer.observe(section));
-  }
-  Observer()
+  });
+}
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu()
 });

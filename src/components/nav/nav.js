@@ -1,5 +1,4 @@
 function calculateSectionBounds() {
-  const labels = document.querySelectorAll('.timeline__label');
   const sections = Array.from(labels).map(label =>
     document.getElementById(label.getAttribute('data-year'))
   );
@@ -14,52 +13,42 @@ function calculateSectionBounds() {
     return { start, end, height: end - start };
   });
 }
+let labels = Array.from(document.querySelectorAll('.nav .timeline__label'));
+let speed = .2;
+let sectionBounds = calculateSectionBounds()
+
 
 function scrollTimeline() {
-  const timelineLabels = document.querySelector('.timeline__labels');
-  const labels = Array.from(document.querySelectorAll('.timeline__label'));
-  const sections = labels.map(label => document.getElementById(label.getAttribute('data-year')));
-
-  // Фиксированная ширина каждого лейбла
-  const LABEL_WIDTH = labels[1].offsetWidth;
-  // console.log(LABEL_WIDTH);
-
-
-  let maxScroll = timelineLabels.scrollWidth - timelineLabels.clientWidth;
-  let sectionBounds = calculateSectionBounds();
-
-  window.addEventListener('resize', () => {
-    sectionBounds = calculateSectionBounds();
-    maxScroll = timelineLabels.scrollWidth - timelineLabels.clientWidth;
-  });
-
+  let timelineLabels = document.querySelector('.timeline__labels'),
+    links = menu.querySelectorAll('.menu__timeline a');
+  for (let i = 0; i < sectionBounds.length; i++) {
+    labels[i].dataset.year = i
+    labels[i].style.width = `${sectionBounds[i].height * speed }px `
+  }
   ScrollTrigger.create({
     trigger: document.querySelector('.page'),
     start: "top top",
     end: "bottom bottom",
     markers: false,
+    stub: 1,
     onUpdate: (self) => {
-      const scrollY = window.scrollY;
-      let currentSectionIndex = 0;
-      let sectionProgress = 0;
-
-      // Находим текущую секцию
+      const scrollY = window.scrollY ;
       for (let i = 0; i < sectionBounds.length; i++) {
         if (scrollY >= sectionBounds[i].start && scrollY < sectionBounds[i].end) {
           currentSectionIndex = i;
-          sectionProgress = (scrollY - sectionBounds[i].start) / sectionBounds[i].height;
+          links.forEach(link => {
+            link === links[i] ? link.classList.add('is_active') : link.classList.remove('is_active');
+          })
           break;
         }
       }
-
-      const scrollPosition = (currentSectionIndex + sectionProgress) * LABEL_WIDTH;
-
-      timelineLabels.scrollLeft = Math.min(scrollPosition, maxScroll);
-      // console.log(timelineLabels.scrollLeft);
+      timelineLabels.scrollLeft = scrollY * speed
     }
   });
 }
+document.addEventListener('DOMContentLoaded', () => {
+  scrollTimeline();
+})
 
-window.addEventListener('load', () => {
-  // scrollTimeline();
-});
+
+

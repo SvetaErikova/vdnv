@@ -70,8 +70,5 @@ function Opening(block){
 
 let opening = document.querySelector('.opening');
 if (opening) {
-  document.addEventListener('DOMContentLoaded', () => {
     Opening(opening)
-  })
-
 }

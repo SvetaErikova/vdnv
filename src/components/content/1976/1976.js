@@ -52,8 +52,6 @@ function Project(block) {
 }
 let projectTitle = document.querySelector('.project__title');
 if(projectTitle){
-  document.addEventListener('DOMContentLoaded', () => {
-    Project(projectTitle)
-  })
+  Project(projectTitle)
 }
 

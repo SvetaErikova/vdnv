@@ -24,14 +24,10 @@ function Olympics(){
       markers: false
     }
   });
-
 }
 
 
 let olympics = document.querySelector('.olympics');
 if (olympics) {
-  document.addEventListener('DOMContentLoaded', () => {
-
   Olympics()
-  })
 }

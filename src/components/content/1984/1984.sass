@@ -263,6 +263,10 @@
     .slider_controls
       margin-top: 3.333vw
 
+.movie
+  position: relative
+  .pin-spacer
+    background-color: #03081B
 .horizontal
   color: var(--text-white)
   background-color: #03081B
@@ -278,6 +282,7 @@
     position: absolute
     top: 0
     bottom: 0
+    z-index: 2
     left: var(--container)
     right: var(--container)
     background: linear-gradient(90deg,rgba(255, 255, 255, 0.12) 0%,transparent 1px,transparent calc(var(--container) - 1px), transparent ,transparent calc(100% - 1px),rgba(255, 255, 255, 0.12) 100%)
@@ -315,6 +320,7 @@
     align-items: center
     justify-content: center
     position: relative
+
     picture
       display: flex
       width: 100%
@@ -328,7 +334,7 @@
       object-fit: inherit
     .title_year
       position: absolute
-      z-index: 2
+      z-index: 1
       @media (max-width: 768px)
         top: 15vh
     .front
@@ -336,12 +342,14 @@
       z-index: 4
     .logo
       position: absolute
-      bottom: 5vh
+      bottom: 10vh
       left: 50%
       translate: -50% 0
       z-index: 2
       max-height: 20vh
       object-fit: contain
+      @media (min-width: 769px)
+        bottom: 5vh
     &.movieClapperboard
       z-index: 3
       background-color: #03081B
@@ -372,12 +380,10 @@
           max-width: 37.5vw
     &.guestFromFuture
       z-index: 2
-      .front
-        position: static
-        left: 0
     &.dayWatch
       z-index: 1
       position: relative
+      overflow: hidden
       &:after
         content: ''
         position: absolute
