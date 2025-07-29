@@ -24,6 +24,23 @@ function Olympics(){
       markers: false
     }
   });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const imgElement = document.querySelector('img.moskow');
+    const totalImages = 33;
+    let currentImage = 1;
+
+    function padNumber(num) {
+      return num.toString().padStart(2, '0');
+    }
+    function updateImage() {
+      imgElement.src = `assets/img/moskow/${padNumber(currentImage)}.png`;
+      currentImage = currentImage % totalImages + 1;
+    }
+
+    const intervalId = setInterval(updateImage, 300);
+    updateImage();
+  });
 }
 
 
