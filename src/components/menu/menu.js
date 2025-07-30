@@ -1,4 +1,4 @@
-let page = document.querySelector('.page');
+
 function startPreload(data) {
   let preloader = document.querySelector('.preloader'),
     preloaderimages = preloader?.querySelectorAll('img');
@@ -32,13 +32,12 @@ function initMenu(){
       link.addEventListener("click", (e) => {
         e.preventDefault();
         let attr = e.target.getAttribute('href').substring(1)
-        // startPreload(attr);
+        startPreload(attr);
         const href = e.target.getAttribute('href');
         setTimeout(() => {
           window.location.href = href;
         }, 300);
       });
-
   });
 }
 document.addEventListener('DOMContentLoaded', () => {

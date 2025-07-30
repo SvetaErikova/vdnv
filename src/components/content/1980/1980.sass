@@ -54,12 +54,13 @@
       &:after
         content: ''
         position: absolute
-        top: auto
         bottom: -1px
         width: 100%
-        background: linear-gradient(180deg, rgba(195, 35, 4, 0) 0%, #C32304 100%)
-        aspect-ratio: 1988/385
+        height: 30vh
+        background: linear-gradient(180deg,rgba(195, 35, 4, 0) 0%, rgba(195, 35, 4, 1) 50%)
         z-index: 2
+        @media (min-width: 769px)
+          height: 70vh
       &_moskow
         position: absolute
         top: 0

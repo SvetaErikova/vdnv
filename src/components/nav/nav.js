@@ -19,7 +19,8 @@ let sectionBounds = calculateSectionBounds()
 
 
 function scrollTimeline() {
-  let timelineLabels = document.querySelector('.timeline__labels'),
+
+  let timelineLabels = document.querySelector('.nav .timeline__labels'),
     links = menu.querySelectorAll('.menu__timeline a');
   for (let i = 0; i < sectionBounds.length; i++) {
     labels[i].dataset.year = i
@@ -32,6 +33,7 @@ function scrollTimeline() {
     markers: false,
     stub: 1,
     onUpdate: (self) => {
+
       const scrollY = window.scrollY ;
       for (let i = 0; i < sectionBounds.length; i++) {
         if (scrollY >= sectionBounds[i].start && scrollY < sectionBounds[i].end) {
@@ -43,6 +45,7 @@ function scrollTimeline() {
         }
       }
       timelineLabels.scrollLeft = scrollY * speed
+      console.log(timelineLabels.scrollLeft)
     }
   });
 }
