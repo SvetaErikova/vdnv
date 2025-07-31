@@ -11,13 +11,5 @@ window.addEventListener('scroll', () => {
 });
 if (window.matchMedia('(min-width: 769px)').matches) {
 
-//   const lenis = new Lenis({
-//     duration: .1,
-//   });
-//   function raf(time) {
-//     lenis.raf(time);
-//     requestAnimationFrame(raf);
-//   }
-//   requestAnimationFrame(raf);
 
 }

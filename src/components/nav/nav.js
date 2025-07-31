@@ -19,6 +19,10 @@ let sectionBounds = calculateSectionBounds()
 
 
 function scrollTimeline() {
+  let labels = Array.from(document.querySelectorAll('.nav .timeline__label'));
+  let speed = .2;
+  let sectionBounds = calculateSectionBounds()
+
 
   let timelineLabels = document.querySelector('.nav .timeline__labels'),
     links = menu.querySelectorAll('.menu__timeline a');
@@ -45,12 +49,13 @@ function scrollTimeline() {
         }
       }
       timelineLabels.scrollLeft = scrollY * speed
-      console.log(timelineLabels.scrollLeft)
     }
   });
 }
 document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
   scrollTimeline();
+  }, 1500);
 })
 
 
