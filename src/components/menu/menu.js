@@ -7,8 +7,10 @@ function startPreload(data) {
       attr === data ? img.classList.remove('hidden') : img.classList.add('hidden');
     })
     page.classList.add('loading');
+  html.style.overflow = 'hidden';
     setTimeout(() => {
       page.classList.remove('loading');
+      html.style.overflow = 'inherit';
     }, 2000);
 }
 let menu = document.querySelector(".menu");

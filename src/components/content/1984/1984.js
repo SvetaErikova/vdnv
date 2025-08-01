@@ -1,43 +1,6 @@
-// function initHorizontalScroll(block) {
-//   const slides = block.querySelectorAll(".slide");
-//   const slidesContainer = block.querySelector(".horizontal__slides");
-//   // Создаем анимацию горизонтального движения
-//   const horizontalScroll = gsap.to(slidesContainer, {
-//     x: () => -((slides.length - 1) * window.innerWidth),
-//     ease: "none",
-//     scrollTrigger: {
-//       trigger: ".horizontal__wrapper",
-//       pin: true,
-//       scrub: window.innerWidth <= 768 ? 1 :1.2,
-//       end: () => `${slides.length * 100}%`,
-//       markers: false
-//
-//     }
-//   });
-//   window.addEventListener('load', () => {
-//     slides.forEach((slide, index) => {
-//       const slideTimeline = gsap.timeline({
-//         scrollTrigger: {
-//           trigger: slide,
-//           start: "left center ",
-//           end: "center center",
-//           containerAnimation: horizontalScroll,
-//           scrub: 1.1,
-//           markers: false
-//         }
-//       });
-//       const animElements = slide.querySelectorAll(".anim");
-//       slide.fromTo(animElements, {
-//         translate: "-100vw 0",
-//       }, {
-//         translate: 0,
-//         duration: 1,
-//         ease: "cubic-bezier(0.8, 0, 0.2, 1);",
-//       });
-//     });
-//   })
-//   ScrollTrigger.refresh();
-// }
+function isMobile() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
 
 function initCosmomauticsSlider(block){
   let slider_controls = document.createElement('div');
@@ -83,13 +46,14 @@ function initHorizontalScroll(block) {
     createElements: true,
     slideClass: 'slide',
     slidesPerView: 1,
-    direction: 'horizontal',
+    // direction: 'horizontal',
     allowTouchMove: false,
     speed: 1000,
     on: {
       slideChangeTransitionStart: function() {
         const currentSlide = this.slides[this.activeIndex];
         const prevSlide = this.slides[this.previousIndex];
+
 
         if (currentDirection === 'forward') {
           // Анимация для следующего слайда
@@ -98,7 +62,7 @@ function initHorizontalScroll(block) {
           // Обратная анимация для предыдущего слайда
           animateContentIn(prevSlide, 'backward');
         }
-      }
+      },
     }
   });
 
@@ -129,7 +93,9 @@ function initHorizontalScroll(block) {
   ScrollTrigger.create({
     trigger: block,
     start: 'bottom bottom',
-    end: () => `+=${slides.length * 100}%`,
+    end: () => `+=${slides.length * window.innerHeight}px`,
+    limitCallbacks: true,
+    autoRefreshEvents: "touchstart,touchend,touchcancel",
     pin: true,
     scrub: 1,
     markers: false,
@@ -139,6 +105,7 @@ function initHorizontalScroll(block) {
       lastScrollPosition = self.scroll();
 
       const progress = self.progress;
+      console.log(progress)
       const slideIndex = Math.floor(progress * slides.length);
 
       if (swiper.activeIndex !== slideIndex && slideIndex < slides.length) {

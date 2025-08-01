@@ -40,7 +40,7 @@ function Opening(block){
       trigger: '.opening__gallery',
       start: 'top bottom',
       end: 'bottom top',
-      scrub: 1.2,
+      scrub: 1.1,
       markers: false
     }
   });

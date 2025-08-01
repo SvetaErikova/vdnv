@@ -1,4 +1,5 @@
-let page = document.querySelector('.page');
+let page = document.querySelector('.page'),
+  html = document.querySelector('html');
 function loadPage() {
   page.classList.add('first_loading');
   setTimeout(() => {

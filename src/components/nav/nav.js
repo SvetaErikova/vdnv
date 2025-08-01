@@ -17,7 +17,6 @@ let labels = Array.from(document.querySelectorAll('.nav .timeline__label'));
 let speed = .2;
 let sectionBounds = calculateSectionBounds()
 
-
 function scrollTimeline() {
   let labels = Array.from(document.querySelectorAll('.nav .timeline__label'));
   let speed = .2;
